@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-22",
+  "lessonId": "lesson-22",
+  "title": "Union-Find (Disjoint Set Union)",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What are the two core operations of a union-find structure?",
+      "options": [
+        { "id": "a", "text": "find (return a set's representative) and union (merge two sets)" },
+        { "id": "a2", "text": "push and pop" },
+        { "id": "c", "text": "insert and delete" },
+        { "id": "d", "text": "enqueue and dequeue" }
+      ],
+      "answer": "a",
+      "explanation": "Union-find supports find(x), which returns the representative of x's set, and union(x, y), which merges two sets."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "With both union by rank and path compression, what is the amortized cost per operation?",
+      "options": [
+        { "id": "a", "text": "O(α(n)) — effectively constant (α(n) ≤ 4 in practice)" },
+        { "id": "b", "text": "O(n)" },
+        { "id": "c", "text": "O(log n) and no better" },
+        { "id": "d", "text": "O(n log n)" }
+      ],
+      "answer": "a",
+      "explanation": "The inverse Ackermann function α grows so slowly that it is at most about 4 for any practical n, making operations effectively O(1) amortized."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about union-find are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "find returns the representative (root) of an element's set" },
+        { "id": "b", "text": "Union by rank keeps the trees shallow" },
+        { "id": "c", "text": "Path compression flattens the tree during find" },
+        { "id": "d", "text": "Without any optimizations, operations are guaranteed O(1)" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "find gives the root, union-by-rank limits height, and path compression flattens. Without optimizations, a naive forest can degrade to O(n), so (d) is false."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The optimization that makes nodes point directly to the root during find is called path ______. (one word)",
+      "answer": ["compression"],
+      "explanation": "Path compression rewires nodes along the find path straight to the root, speeding up future finds."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of a union(x, y) operation with union by rank.",
+      "items": [
+        { "id": "fx", "text": "Find the root of x" },
+        { "id": "fy", "text": "Find the root of y" },
+        { "id": "check", "text": "If the roots are the same, stop (already merged)" },
+        { "id": "link", "text": "Otherwise attach the shorter tree's root under the taller's" }
+      ],
+      "answer": ["fx", "fy", "check", "link"],
+      "explanation": "Union finds both roots, does nothing if they already match, and otherwise links by rank to keep the merged tree shallow."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each term with its meaning.",
+      "pairs": [
+        { "left": "find", "right": "Return an element's set representative" },
+        { "left": "union", "right": "Merge two sets" },
+        { "left": "Union by rank", "right": "Attach the smaller tree under the larger" },
+        { "left": "Path compression", "right": "Flatten the tree during find" }
+      ],
+      "explanation": "The two operations plus the two optimizations are the entire union-find toolkit."
+    }
+  ]
+}

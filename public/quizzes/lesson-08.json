@@ -1,0 +1,78 @@
+{
+  "id": "quiz-lesson-08",
+  "lessonId": "lesson-08",
+  "title": "Elementary Sorting: Bubble, Selection, Insertion",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Which elementary sort runs in O(n) on already-sorted (or nearly-sorted) input?",
+      "options": [
+        { "id": "a", "text": "Insertion sort" },
+        { "id": "b", "text": "Selection sort" },
+        { "id": "c", "text": "None — they are all always Θ(n²)" },
+        { "id": "d", "text": "Selection sort, but only for reverse-sorted input" }
+      ],
+      "answer": "a",
+      "explanation": "Insertion sort (and early-exit bubble sort) does almost no shifting on sorted data, giving O(n) best case. Selection sort has no best-case speedup."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which of the three elementary sorts is NOT stable in its standard form?",
+      "options": [
+        { "id": "a", "text": "Selection sort" },
+        { "id": "b", "text": "Insertion sort" },
+        { "id": "c", "text": "Bubble sort" },
+        { "id": "d", "text": "All three are stable" }
+      ],
+      "answer": "a",
+      "explanation": "The standard swap-based selection sort can reorder equal keys, so it is not stable. Insertion and bubble sort are stable."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Insertion sort's best case is O(n)" },
+        { "id": "b", "text": "All three elementary sorts are in-place (O(1) extra space)" },
+        { "id": "c", "text": "Selection sort performs only O(n) swaps" },
+        { "id": "d", "text": "Bubble sort's worst case is O(n log n)" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Insertion is O(n) best case, all three are in-place, and selection makes only O(n) swaps. Bubble sort's worst case is Θ(n²), not O(n log n)."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "A sort is called ______ if equal elements keep their original relative order. (one word)",
+      "answer": ["stable"],
+      "explanation": "Stability preserves the prior ordering of equal keys — important when sorting records by successive fields."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of inserting one element (the key) during insertion sort.",
+      "items": [
+        { "id": "take", "text": "Take the next element as the key" },
+        { "id": "shift", "text": "Shift larger sorted elements one place right" },
+        { "id": "place", "text": "Place the key in the resulting gap" }
+      ],
+      "answer": ["take", "shift", "place"],
+      "explanation": "Each outer step takes the next key, slides larger elements right to open a gap, and drops the key into place — keeping the prefix sorted."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each sort with a distinguishing property.",
+      "pairs": [
+        { "left": "Insertion sort", "right": "O(n) on nearly-sorted input" },
+        { "left": "Selection sort", "right": "Only O(n) swaps, not stable" },
+        { "left": "Bubble sort", "right": "Swaps adjacent out-of-order pairs" },
+        { "left": "Timsort (list.sort)", "right": "O(n log n), stable, adaptive" }
+      ],
+      "explanation": "Each sort has a signature: insertion is adaptive, selection minimizes swaps, bubble swaps neighbors, and Timsort is the O(n log n) production default."
+    }
+  ]
+}

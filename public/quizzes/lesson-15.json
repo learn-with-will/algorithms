@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-15",
+  "lessonId": "lesson-15",
+  "title": "Graph Representations and Traversal (BFS & DFS)",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Which traversal finds the shortest path (fewest edges) in an unweighted graph?",
+      "options": [
+        { "id": "a", "text": "Breadth-first search (BFS)" },
+        { "id": "b", "text": "Depth-first search (DFS)" },
+        { "id": "c", "text": "Either one works equally well" },
+        { "id": "d", "text": "Neither — you need Dijkstra even for unweighted graphs" }
+      ],
+      "answer": "a",
+      "explanation": "BFS visits vertices in order of distance from the source, so the first time it reaches a vertex is along a fewest-edges path."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What is the time complexity of BFS or DFS using an adjacency list?",
+      "options": [
+        { "id": "a", "text": "O(V + E)" },
+        { "id": "b", "text": "O(V²)" },
+        { "id": "c", "text": "O(E log V)" },
+        { "id": "d", "text": "O(V · E)" }
+      ],
+      "answer": "a",
+      "explanation": "Each vertex is dequeued/visited once and each edge is examined a constant number of times, giving O(V + E)."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "BFS uses a FIFO queue" },
+        { "id": "b", "text": "DFS uses a stack (or recursion)" },
+        { "id": "c", "text": "An adjacency list uses O(V + E) space" },
+        { "id": "d", "text": "An adjacency matrix uses O(V + E) space" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "BFS is queue-based, DFS is stack/recursion-based, and adjacency lists are O(V+E). An adjacency matrix is O(V²), so (d) is false."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To avoid revisiting nodes and looping forever on cycles, a graph traversal marks each node as ______. (one word)",
+      "answer": ["visited"],
+      "explanation": "A visited set records explored vertices so the traversal terminates even when the graph has cycles."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of one BFS iteration (starting from an initialized queue).",
+      "items": [
+        { "id": "dequeue", "text": "Dequeue the next node from the front" },
+        { "id": "process", "text": "Process (record) that node" },
+        { "id": "neighbors", "text": "For each unvisited neighbor, mark it visited and enqueue it" },
+        { "id": "repeat", "text": "Repeat until the queue is empty" }
+      ],
+      "answer": ["dequeue", "process", "neighbors", "repeat"],
+      "explanation": "BFS repeatedly dequeues a node, processes it, and enqueues its unvisited neighbors (marking them visited on enqueue) until the queue drains."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each item with its property.",
+      "pairs": [
+        { "left": "BFS", "right": "Queue; unweighted shortest paths" },
+        { "left": "DFS", "right": "Stack/recursion; go deep first" },
+        { "left": "Adjacency list", "right": "O(V + E) space; good for sparse graphs" },
+        { "left": "Adjacency matrix", "right": "O(V²) space; O(1) edge lookup" }
+      ],
+      "explanation": "BFS and DFS differ by frontier structure and use; the two representations trade space for edge-lookup speed."
+    }
+  ]
+}

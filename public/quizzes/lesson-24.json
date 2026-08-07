@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-24",
+  "lessonId": "lesson-24",
+  "title": "String Matching: Naive and KMP",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the total running time of the KMP string-matching algorithm on a text of length n and pattern of length m?",
+      "options": [
+        { "id": "a", "text": "O(n + m)" },
+        { "id": "b", "text": "O(nm)" },
+        { "id": "c", "text": "O(n log m)" },
+        { "id": "d", "text": "O(m²)" }
+      ],
+      "answer": "a",
+      "explanation": "KMP scans the text once (the text pointer never moves backward) after O(m) preprocessing, giving O(n + m) total."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does the prefix (failure) function of a pattern store for each prefix?",
+      "options": [
+        { "id": "a", "text": "The length of the longest proper prefix that is also a suffix" },
+        { "id": "b", "text": "The number of distinct characters in the prefix" },
+        { "id": "c", "text": "The index of the pattern in the text" },
+        { "id": "d", "text": "A hash of the prefix" }
+      ],
+      "answer": "a",
+      "explanation": "The prefix function captures the pattern's internal repetition — the longest proper prefix that is also a suffix — enabling the fallback on a mismatch."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about string matching are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Naive matching is O(nm) in the worst case" },
+        { "id": "b", "text": "KMP runs in O(n + m)" },
+        { "id": "c", "text": "KMP never moves the text pointer backward" },
+        { "id": "d", "text": "Naive matching is always faster than KMP" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Naive is O(nm) worst case, KMP is linear and never rescans the text. Naive is not always faster — it can be far slower on repetitive input."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "KMP precomputes the ______ function (also called the failure function) of the pattern. (one word)",
+      "answer": ["prefix"],
+      "explanation": "The prefix function tells KMP how far to fall back within the pattern on a mismatch without re-reading text."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of the KMP algorithm.",
+      "items": [
+        { "id": "build", "text": "Compute the prefix function of the pattern" },
+        { "id": "scan", "text": "Scan the text left to right, advancing the pattern pointer on matches" },
+        { "id": "fallback", "text": "On a mismatch, fall back the pattern pointer via the prefix function (text pointer stays)" },
+        { "id": "report", "text": "Report a match when the whole pattern is matched" }
+      ],
+      "answer": ["build", "scan", "fallback", "report"],
+      "explanation": "KMP preprocesses the pattern, then scans the text once, using the prefix function to fall back within the pattern instead of rescanning the text."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each algorithm/term with its fact.",
+      "pairs": [
+        { "left": "Naive matching", "right": "O(nm) worst case" },
+        { "left": "KMP", "right": "O(n + m) using the prefix function" },
+        { "left": "Rabin-Karp", "right": "Rolling hash; multi-pattern search" },
+        { "left": "Prefix function", "right": "Longest proper prefix that is also a suffix" }
+      ],
+      "explanation": "Each matcher trades preprocessing for search speed; the prefix function is the structure that powers KMP."
+    }
+  ]
+}

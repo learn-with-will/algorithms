@@ -1,0 +1,78 @@
+{
+  "id": "quiz-lesson-10",
+  "lessonId": "lesson-10",
+  "title": "Divide and Conquer and Merge Sort",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is merge sort's worst-case time complexity?",
+      "options": [
+        { "id": "a", "text": "Θ(n log n)" },
+        { "id": "b", "text": "Θ(n²)" },
+        { "id": "c", "text": "Θ(n)" },
+        { "id": "d", "text": "Θ(log n)" }
+      ],
+      "answer": "a",
+      "explanation": "Merge sort is Θ(n log n) in every case — the recursion tree has log n levels, each doing Θ(n) merge work."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Is the standard array-based merge sort in-place?",
+      "options": [
+        { "id": "a", "text": "No — it needs O(n) auxiliary space for merging" },
+        { "id": "b", "text": "Yes — it sorts using O(1) extra space" },
+        { "id": "c", "text": "Yes — it swaps elements like quicksort" },
+        { "id": "d", "text": "Only when the input is already sorted" }
+      ],
+      "answer": "a",
+      "explanation": "The merge step writes into an auxiliary array, so merge sort uses O(n) extra space and is not in-place."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about merge sort are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "It is stable when ties are taken from the left half" },
+        { "id": "b", "text": "Its Θ(n log n) bound holds for every input" },
+        { "id": "c", "text": "The merge step runs in linear time" },
+        { "id": "d", "text": "It sorts in place with O(1) extra space" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Merge sort is stable, guaranteed Θ(n log n), and its merge is linear. It is NOT in-place — it uses O(n) auxiliary space."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "Merge sort's recurrence is T(n) = 2·T(n/2) + ______, where the added term is the linear-time merge. (write the growth term, e.g. O(n))",
+      "answer": ["O(n)", "Θ(n)", "n", "cn"],
+      "explanation": "The merge of two halves is linear, so the combine cost is Θ(n); the recurrence solves to Θ(n log n)."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the three steps of the divide-and-conquer paradigm as applied by merge sort.",
+      "items": [
+        { "id": "divide", "text": "Divide the array into two halves" },
+        { "id": "conquer", "text": "Conquer: sort each half recursively" },
+        { "id": "combine", "text": "Combine: merge the two sorted halves" }
+      ],
+      "answer": ["divide", "conquer", "combine"],
+      "explanation": "Divide and conquer splits the problem, solves the pieces recursively, then combines — here the combine step is the linear merge."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each merge-sort property with its value.",
+      "pairs": [
+        { "left": "Worst-case time", "right": "Θ(n log n)" },
+        { "left": "Extra space", "right": "O(n)" },
+        { "left": "Stable?", "right": "Yes" },
+        { "left": "In-place?", "right": "No" }
+      ],
+      "explanation": "Merge sort trades O(n) extra space for a guaranteed Θ(n log n), stable, but non-in-place sort."
+    }
+  ]
+}

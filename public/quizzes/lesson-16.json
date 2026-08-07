@@ -1,0 +1,78 @@
+{
+  "id": "quiz-lesson-16",
+  "lessonId": "lesson-16",
+  "title": "Non-Comparison Sorting: Counting, Radix, Bucket",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the worst-case lower bound for any comparison-based sorting algorithm?",
+      "options": [
+        { "id": "a", "text": "Ω(n log n)" },
+        { "id": "b", "text": "Ω(n)" },
+        { "id": "c", "text": "Ω(n²)" },
+        { "id": "d", "text": "Ω(log n)" }
+      ],
+      "answer": "a",
+      "explanation": "A decision tree sorting n elements has n! leaves, so its height — the worst-case comparison count — is at least log₂(n!) = Θ(n log n)."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What is counting sort's time complexity for n integers with keys in [0, k]?",
+      "options": [
+        { "id": "a", "text": "O(n + k)" },
+        { "id": "b", "text": "O(n log n)" },
+        { "id": "c", "text": "O(n · k)" },
+        { "id": "d", "text": "O(k log n)" }
+      ],
+      "answer": "a",
+      "explanation": "Counting sort tallies keys and places elements in O(n + k); it is efficient when k = O(n) and is stable."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Counting sort is stable" },
+        { "id": "b", "text": "Radix sort uses a stable sort on each digit" },
+        { "id": "c", "text": "Non-comparison sorts beat Ω(n log n) by not comparing elements to each other" },
+        { "id": "d", "text": "Counting sort works directly on arbitrary floating-point keys over any range" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Counting sort is stable, radix relies on per-digit stability, and these sorts index by key value rather than comparing. They need bounded integer keys, so (d) is false."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The worst-case lower bound for any comparison sort is Ω(n log ___). (fill the missing term)",
+      "answer": ["n"],
+      "explanation": "log₂(n!) = Θ(n log n), so comparison sorts require Ω(n log n) comparisons in the worst case."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of counting sort.",
+      "items": [
+        { "id": "count", "text": "Tally the number of occurrences of each key" },
+        { "id": "prefix", "text": "Convert the counts to prefix sums (output positions)" },
+        { "id": "place", "text": "Place each element into the output using its position" }
+      ],
+      "answer": ["count", "prefix", "place"],
+      "explanation": "Count occurrences, turn them into cumulative positions, then place each element directly — no comparisons involved."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each sort with its key fact.",
+      "pairs": [
+        { "left": "Counting sort", "right": "O(n + k), integer keys in a small range" },
+        { "left": "Radix sort", "right": "Stable pass per digit, O(d·(n + k))" },
+        { "left": "Bucket sort", "right": "O(n) average for uniform keys" },
+        { "left": "Comparison lower bound", "right": "Ω(n log n)" }
+      ],
+      "explanation": "Each linear-time sort exploits key structure; comparison sorts are bounded below by Ω(n log n)."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-18",
+  "lessonId": "lesson-18",
+  "title": "Dynamic Programming II: Classic Problems",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the time complexity of the standard LCS dynamic program for strings of length m and n?",
+      "options": [
+        { "id": "a", "text": "O(mn)" },
+        { "id": "b", "text": "O(m + n)" },
+        { "id": "c", "text": "O(2^n)" },
+        { "id": "d", "text": "O(mn log n)" }
+      ],
+      "answer": "a",
+      "explanation": "It fills an (m+1)×(n+1) table with O(1) work per cell, giving O(mn) time and space."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "How does a subsequence differ from a substring?",
+      "options": [
+        { "id": "a", "text": "A subsequence preserves order but need not be contiguous" },
+        { "id": "b", "text": "A subsequence must be contiguous; a substring need not be" },
+        { "id": "c", "text": "They are the same thing" },
+        { "id": "d", "text": "A subsequence must be sorted" }
+      ],
+      "answer": "a",
+      "explanation": "A subsequence keeps relative order but may skip elements; a substring is a contiguous run. LCS and LIS are about subsequences."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "LCS runs in O(mn) time" },
+        { "id": "b", "text": "Edit distance runs in O(mn) time" },
+        { "id": "c", "text": "Longest increasing subsequence can be found in O(n log n)" },
+        { "id": "d", "text": "LCS finds the longest contiguous common substring" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "LCS and edit distance are O(mn); LIS has an O(n log n) method. LCS is about a (possibly non-contiguous) subsequence, not a substring."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The minimum number of single-character insertions, deletions, and substitutions to turn one string into another is the ______ distance. (Levenshtein or the common one-word name)",
+      "answer": ["edit", "levenshtein"],
+      "explanation": "This is the edit (Levenshtein) distance, computed by an O(mn) DP."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps to solve LCS with a bottom-up table.",
+      "items": [
+        { "id": "table", "text": "Create an (m+1)×(n+1) table" },
+        { "id": "base", "text": "Initialize the empty-prefix row and column to 0" },
+        { "id": "fill", "text": "Fill each cell from the recurrence" },
+        { "id": "read", "text": "Read the answer from dp[m][n]" }
+      ],
+      "answer": ["table", "base", "fill", "read"],
+      "explanation": "Allocate the table, set the empty-prefix base cases, fill in dependency order, and read the bottom-right cell."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each problem with its description or complexity.",
+      "pairs": [
+        { "left": "LCS", "right": "Longest common subsequence, O(mn)" },
+        { "left": "Edit distance", "right": "Fewest insert/delete/substitute edits, O(mn)" },
+        { "left": "LIS", "right": "Longest increasing subsequence, O(n²) or O(n log n)" },
+        { "left": "Subsequence", "right": "Order-preserving, not necessarily contiguous" }
+      ],
+      "explanation": "These sequence problems share a prefix-indexed DP shape; a subsequence is the order-preserving, gap-allowing selection they operate on."
+    }
+  ]
+}

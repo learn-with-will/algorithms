@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-06",
+  "lessonId": "lesson-06",
+  "title": "Hash Tables",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "With a good hash function and bounded load factor, what is the average time of a hash-table lookup — and its worst case?",
+      "options": [
+        { "id": "a", "text": "O(1) average, O(n) worst case" },
+        { "id": "b", "text": "O(log n) average, O(n) worst case" },
+        { "id": "c", "text": "O(1) average, O(1) worst case" },
+        { "id": "d", "text": "O(n) average, O(n log n) worst case" }
+      ],
+      "answer": "a",
+      "explanation": "Even distribution keeps buckets tiny (O(1) average), but if every key collides into one bucket you scan all n entries (O(n) worst case)."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "The load factor of a hash table is defined as...",
+      "options": [
+        { "id": "a", "text": "n / m — entries divided by buckets" },
+        { "id": "b", "text": "m / n — buckets divided by entries" },
+        { "id": "c", "text": "the length of the longest chain" },
+        { "id": "d", "text": "the number of hash collisions so far" }
+      ],
+      "answer": "a",
+      "explanation": "Load factor α = n/m measures fullness; as it grows, collisions increase, which is why tables resize to keep α bounded."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about hash tables are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Chaining stores colliding entries in a per-bucket list" },
+        { "id": "b", "text": "Open addressing probes for another open slot on a collision" },
+        { "id": "c", "text": "Python dict and set keys must be hashable" },
+        { "id": "d", "text": "Hash-table lookup is guaranteed O(1) in the worst case" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Chaining and open addressing are the two collision strategies, and keys must be hashable. The O(1) is an average, not a worst-case guarantee."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The two main collision-resolution strategies are chaining and ______ addressing. (one word)",
+      "answer": ["open"],
+      "explanation": "Open addressing keeps all entries in the bucket array and probes for the next available slot when a collision occurs."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of a hash-table lookup (chaining).",
+      "items": [
+        { "id": "hash", "text": "Compute hash(key)" },
+        { "id": "index", "text": "Reduce it to a bucket index (mod m)" },
+        { "id": "scan", "text": "Examine that bucket's chain" },
+        { "id": "compare", "text": "Compare stored keys for equality and return the match" }
+      ],
+      "answer": ["hash", "index", "scan", "compare"],
+      "explanation": "Hash the key, map it to a bucket, scan that bucket's short chain, and compare keys to find the entry."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each term with its meaning.",
+      "pairs": [
+        { "left": "Load factor", "right": "n / m (entries per buckets)" },
+        { "left": "Chaining", "right": "Bucket holds a list of colliding entries" },
+        { "left": "Open addressing", "right": "Probe for another slot on collision" },
+        { "left": "Rehash", "right": "Recompute buckets for all entries on resize" }
+      ],
+      "explanation": "These are the core hash-table concepts: fullness ratio, the two collision strategies, and the resize operation."
+    }
+  ]
+}

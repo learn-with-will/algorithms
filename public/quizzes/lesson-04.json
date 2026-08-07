@@ -1,0 +1,78 @@
+{
+  "id": "quiz-lesson-04",
+  "lessonId": "lesson-04",
+  "title": "Linked Lists",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is the time complexity of reaching the k-th node of a singly linked list?",
+      "options": [
+        { "id": "a", "text": "O(k) — you must follow k pointers from the head" },
+        { "id": "b", "text": "O(1) — via address arithmetic like an array" },
+        { "id": "c", "text": "O(log k) — the list is kept sorted" },
+        { "id": "d", "text": "O(n²)" }
+      ],
+      "answer": "a",
+      "explanation": "Nodes are not contiguous, so there is no O(1) indexing; you traverse pointer by pointer, which costs O(k)."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Why is inserting a new node at the head of a linked list O(1)?",
+      "options": [
+        { "id": "a", "text": "You create one node and repoint the head; nothing shifts" },
+        { "id": "b", "text": "The list copies all elements into a bigger block" },
+        { "id": "c", "text": "The head is stored in a hash table" },
+        { "id": "d", "text": "Every element moves one position right" }
+      ],
+      "answer": "a",
+      "explanation": "Unlike an array, no elements move — you just allocate a node, point it at the old head, and update the head pointer."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements comparing linked lists and arrays are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Arrays give O(1) indexing; linked lists do not" },
+        { "id": "b", "text": "Linked lists give O(1) insertion at the head; arrays do not" },
+        { "id": "c", "text": "Linked lists use extra memory per node for pointers" },
+        { "id": "d", "text": "Linked lists allow O(1) random access by index" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Arrays win at indexing and memory density; linked lists win at O(1) head/known-node splicing. Linked lists have no O(1) random access."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "A placeholder node that always precedes the first real element, removing head/empty edge cases, is called a ______ node. (dummy or ______)",
+      "answer": ["sentinel", "dummy"],
+      "explanation": "A sentinel (a.k.a. dummy) node gives every real node a predecessor, so insertion/deletion at the head needs no special case."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps to insert a new value at the head of a singly linked list.",
+      "items": [
+        { "id": "make", "text": "Create a new node holding the value" },
+        { "id": "point", "text": "Set new_node.next = head" },
+        { "id": "head", "text": "Set head = new_node" }
+      ],
+      "answer": ["make", "point", "head"],
+      "explanation": "Build the node, point it at the current head, then move the head to the new node — order matters so you don't lose the old head."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each linked-list operation with its time complexity.",
+      "pairs": [
+        { "left": "Insert at head", "right": "O(1)" },
+        { "left": "Search by value", "right": "O(n)" },
+        { "left": "Delete a node you hold (doubly linked)", "right": "O(1)" },
+        { "left": "Access the k-th element", "right": "O(k)" }
+      ],
+      "explanation": "Head insertion and deleting a held node in a doubly linked list are constant; searching and indexing require traversal."
+    }
+  ]
+}

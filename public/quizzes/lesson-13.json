@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-13",
+  "lessonId": "lesson-13",
+  "title": "Binary Search Trees",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Which statement correctly describes the binary-search-tree property?",
+      "options": [
+        { "id": "a", "text": "For every node, all keys in the left subtree are smaller and all in the right subtree are larger" },
+        { "id": "b", "text": "Every node has at most two children" },
+        { "id": "c", "text": "The left child is smaller than the right child, with no constraint on subtrees" },
+        { "id": "d", "text": "Every level of the tree is completely full" }
+      ],
+      "answer": "a",
+      "explanation": "The property is recursive: the ENTIRE left subtree is smaller than a node and the entire right subtree is larger — not just the immediate children."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which traversal of a BST produces keys in ascending sorted order?",
+      "options": [
+        { "id": "a", "text": "In-order (left, node, right)" },
+        { "id": "b", "text": "Pre-order (node, left, right)" },
+        { "id": "c", "text": "Post-order (left, right, node)" },
+        { "id": "d", "text": "Level-order (breadth-first)" }
+      ],
+      "answer": "a",
+      "explanation": "Visiting the smaller left subtree before the node and the larger right subtree after yields ascending order."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about BSTs are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Search, insert, and delete are all O(h) where h is the height" },
+        { "id": "b", "text": "In-order traversal lists the keys in sorted order" },
+        { "id": "c", "text": "Inserting sorted keys can degrade a plain BST to O(n) per operation" },
+        { "id": "d", "text": "A plain BST always guarantees O(log n) operations" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Costs are O(h); in-order is sorted; sorted inserts create a degenerate O(n) chain. Only a BALANCED tree guarantees O(log n)."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "An ______ traversal of a BST visits keys in ascending sorted order. (one word)",
+      "answer": ["in-order", "inorder"],
+      "explanation": "In-order traversal (left, node, right) exploits the ordering property to emit keys in sorted sequence."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of searching for a key in a BST.",
+      "items": [
+        { "id": "start", "text": "Start at the root" },
+        { "id": "compare", "text": "Compare the key with the current node" },
+        { "id": "branch", "text": "Go left if smaller, right if larger" },
+        { "id": "repeat", "text": "Repeat until found or you reach an empty spot" }
+      ],
+      "answer": ["start", "compare", "branch", "repeat"],
+      "explanation": "BST search follows one root-to-leaf path guided by comparisons, which is why it costs O(h)."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each item with its complexity or meaning.",
+      "pairs": [
+        { "left": "Search (balanced BST)", "right": "O(log n)" },
+        { "left": "Search (degenerate BST)", "right": "O(n)" },
+        { "left": "In-order traversal", "right": "O(n), sorted output" },
+        { "left": "In-order successor", "right": "Smallest key in the right subtree" }
+      ],
+      "explanation": "Balance determines whether search is logarithmic or linear; in-order lists everything sorted; the successor is used in two-child deletion."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-11",
+  "lessonId": "lesson-11",
+  "title": "Quicksort",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "After a partition step in quicksort, what is true about the pivot?",
+      "options": [
+        { "id": "a", "text": "It is in its final sorted position, with smaller elements before and larger after" },
+        { "id": "b", "text": "It is always at the middle index of the array" },
+        { "id": "c", "text": "It is removed from the array" },
+        { "id": "d", "text": "It is duplicated on both sides" }
+      ],
+      "answer": "a",
+      "explanation": "Partitioning places the pivot where it belongs permanently; the two sides are then sorted recursively."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What are quicksort's average and worst-case time complexities?",
+      "options": [
+        { "id": "a", "text": "Θ(n log n) average, Θ(n²) worst" },
+        { "id": "b", "text": "Θ(n log n) average, Θ(n log n) worst" },
+        { "id": "c", "text": "Θ(n) average, Θ(n log n) worst" },
+        { "id": "d", "text": "Θ(n²) average, Θ(n²) worst" }
+      ],
+      "answer": "a",
+      "explanation": "Balanced partitions give Θ(n log n) on average; maximally unbalanced partitions (extreme pivots) give the Θ(n²) worst case."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about quicksort are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "It sorts in place (aside from the recursion stack)" },
+        { "id": "b", "text": "Randomizing the pivot makes the worst case unlikely on any input" },
+        { "id": "c", "text": "A naive last-element pivot is Θ(n²) on already-sorted input" },
+        { "id": "d", "text": "In-place quicksort is stable" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Quicksort is in-place, randomization defeats worst-case inputs, and a naive pivot is quadratic on sorted data. It is NOT stable."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The quicksort step that rearranges elements around the pivot is called ______. (one word)",
+      "answer": ["partition", "partitioning"],
+      "explanation": "Partitioning splits the array into elements ≤ pivot and elements > pivot, fixing the pivot's final position."
+    },
+    {
+      "id": "q5",
+      "type": "ordering",
+      "prompt": "Order the steps of a quicksort call on a subarray with more than one element.",
+      "items": [
+        { "id": "pivot", "text": "Choose a pivot" },
+        { "id": "part", "text": "Partition the subarray around the pivot" },
+        { "id": "left", "text": "Recursively sort the left (smaller) side" },
+        { "id": "right", "text": "Recursively sort the right (larger) side" }
+      ],
+      "answer": ["pivot", "part", "left", "right"],
+      "explanation": "Pick a pivot, partition to place it, then recurse on each side; there is no combine step because partitioning already separates the sides."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each concept with its description.",
+      "pairs": [
+        { "left": "Pivot", "right": "Element partitioning is organized around" },
+        { "left": "Worst case Θ(n²)", "right": "Pivot repeatedly smallest or largest" },
+        { "left": "Randomized pivot", "right": "Avoids worst case on any input" },
+        { "left": "Quickselect", "right": "Finds the k-th smallest in O(n) average" }
+      ],
+      "explanation": "These capture quicksort's core: the pivot, the degenerate case, the fix, and the selection variant."
+    }
+  ]
+}
