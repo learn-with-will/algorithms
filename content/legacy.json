@@ -1,0 +1,291 @@
+[
+  {
+    "id": "lesson-01",
+    "slug": "algorithmic-thinking-and-correctness",
+    "title": "Algorithmic Thinking and Correctness",
+    "lessons": [
+      "what-is-an-algorithm",
+      "problems-and-instances",
+      "pseudocode-and-specification",
+      "correctness-and-loop-invariants",
+      "loop-invariant-in-action",
+      "guarding-preconditions"
+    ]
+  },
+  {
+    "id": "lesson-02",
+    "slug": "big-o-and-complexity-analysis",
+    "title": "Big-O and Complexity Analysis",
+    "lessons": [
+      "asymptotic-notation-big-o",
+      "omega-and-theta-notation",
+      "common-complexity-classes",
+      "space-complexity-and-auxiliary-memory",
+      "amortized-analysis-fundamentals"
+    ]
+  },
+  {
+    "id": "lesson-03",
+    "slug": "arrays-and-dynamic-arrays",
+    "title": "Arrays and Dynamic Arrays",
+    "lessons": [
+      "contiguous-memory-and-indexing",
+      "dynamic-array-geometric-growth",
+      "array-insertion-and-deletion-costs",
+      "list-slicing-and-copy-overheads",
+      "preallocating-and-building-arrays"
+    ]
+  },
+  {
+    "id": "lesson-04",
+    "slug": "linked-lists",
+    "title": "Linked Lists",
+    "lessons": [
+      "singly-linked-list-nodes",
+      "linked-list-insert-and-delete",
+      "doubly-linked-lists",
+      "sentinel-nodes-for-edge-cases",
+      "reversing-a-linked-list"
+    ]
+  },
+  {
+    "id": "lesson-05",
+    "slug": "stacks-and-queues",
+    "title": "Stacks and Queues",
+    "lessons": [
+      "lifo-stack-operations",
+      "balanced-brackets-with-stacks",
+      "fifo-queue-operations",
+      "collections-deque-vs-list-pop0",
+      "monotonic-stack-technique"
+    ]
+  },
+  {
+    "id": "lesson-06",
+    "slug": "hash-tables",
+    "title": "Hash Tables",
+    "lessons": [
+      "hash-function-principles",
+      "collision-resolution-by-chaining",
+      "open-addressing-and-probing",
+      "load-factor-and-dynamic-rehashing",
+      "hash-table-worst-case-pitfalls"
+    ]
+  },
+  {
+    "id": "lesson-07",
+    "slug": "recursion-and-the-call-stack",
+    "title": "Recursion and the Call Stack",
+    "lessons": [
+      "anatomy-of-a-recursive-function",
+      "call-stack-and-activation-frames",
+      "recursion-depth-limits-in-python",
+      "tail-recursion-and-iteration",
+      "divide-and-conquer-recurrence"
+    ]
+  },
+  {
+    "id": "lesson-08",
+    "slug": "elementary-sorting",
+    "title": "Elementary Sorting: Bubble, Selection, Insertion",
+    "lessons": [
+      "bubble-sort-mechanics",
+      "selection-sort-and-write-minimization",
+      "insertion-sort-and-online-processing",
+      "sorting-stability-explained",
+      "in-place-sorting-trade-offs"
+    ]
+  },
+  {
+    "id": "lesson-09",
+    "slug": "linear-and-binary-search",
+    "title": "Linear and Binary Search",
+    "lessons": [
+      "linear-search-and-sentinel-search",
+      "binary-search-algorithm",
+      "binary-search-off-by-one-traps",
+      "python-bisect-module",
+      "binary-search-on-answer-spaces"
+    ]
+  },
+  {
+    "id": "lesson-10",
+    "slug": "divide-and-conquer-merge-sort",
+    "title": "Divide and Conquer and Merge Sort",
+    "lessons": [
+      "divide-and-conquer-paradigm",
+      "merge-step-mechanics",
+      "merge-sort-implementation",
+      "merge-sort-space-trade-off",
+      "master-theorem-for-divide-and-conquer"
+    ]
+  },
+  {
+    "id": "lesson-11",
+    "slug": "quicksort",
+    "title": "Quicksort",
+    "lessons": [
+      "lomuto-partition-scheme",
+      "hoare-partition-scheme",
+      "quicksort-recursion-and-base-cases",
+      "quicksort-worst-case-mitigation",
+      "quickselect-kth-smallest-element"
+    ]
+  },
+  {
+    "id": "lesson-12",
+    "slug": "heaps-and-heapsort",
+    "title": "Heaps and Heapsort",
+    "lessons": [
+      "binary-heap-properties",
+      "array-representation-of-heaps",
+      "sift-up-and-sift-down",
+      "linear-time-build-heap",
+      "heapsort-and-heapq-module"
+    ]
+  },
+  {
+    "id": "lesson-13",
+    "slug": "binary-search-trees",
+    "title": "Binary Search Trees",
+    "lessons": [
+      "binary-search-tree-property",
+      "bst-search-and-insertion",
+      "bst-node-deletion",
+      "tree-traversal-orders",
+      "bst-degeneration-to-linked-list"
+    ]
+  },
+  {
+    "id": "lesson-14",
+    "slug": "balanced-trees",
+    "title": "Balanced Trees: AVL and Red-Black",
+    "lessons": [
+      "tree-rotations-single-and-double",
+      "avl-tree-balance-factor",
+      "avl-rebalancing-four-cases",
+      "red-black-tree-invariants",
+      "avl-vs-red-black-trees"
+    ]
+  },
+  {
+    "id": "lesson-15",
+    "slug": "graph-representations-and-traversal",
+    "title": "Graph Representations and Traversal: BFS and DFS",
+    "lessons": [
+      "adjacency-matrix-vs-adjacency-list",
+      "breadth-first-search-bfs",
+      "unweighted-shortest-paths-with-bfs",
+      "depth-first-search-dfs",
+      "cycle-detection-and-connectivity"
+    ]
+  },
+  {
+    "id": "lesson-16",
+    "slug": "non-comparison-sorting",
+    "title": "Non-Comparison Sorting: Counting, Radix, Bucket",
+    "lessons": [
+      "comparison-sort-lower-bound",
+      "counting-sort-algorithm",
+      "radix-sort-lsd-and-msd",
+      "bucket-sort-distribution",
+      "when-to-use-non-comparison-sorts"
+    ]
+  },
+  {
+    "id": "lesson-17",
+    "slug": "dynamic-programming-foundations",
+    "title": "Dynamic Programming I: Foundations",
+    "lessons": [
+      "optimal-substructure-explained",
+      "overlapping-subproblems",
+      "memoization-top-down-dp",
+      "tabulation-bottom-up-dp",
+      "knapsack-0-1-state-and-space-optimization"
+    ]
+  },
+  {
+    "id": "lesson-18",
+    "slug": "dynamic-programming-classic-problems",
+    "title": "Dynamic Programming II: Classic Problems",
+    "lessons": [
+      "longest-common-subsequence-lcs",
+      "reconstructing-dp-solutions",
+      "edit-distance-levenshtein",
+      "longest-increasing-subsequence-lis",
+      "coin-change-fewest-coins"
+    ]
+  },
+  {
+    "id": "lesson-19",
+    "slug": "greedy-algorithms",
+    "title": "Greedy Algorithms",
+    "lessons": [
+      "greedy-choice-property",
+      "activity-selection-problem",
+      "fractional-knapsack-greedy",
+      "huffman-coding-compression",
+      "when-greedy-fails-vs-dp"
+    ]
+  },
+  {
+    "id": "lesson-20",
+    "slug": "shortest-paths",
+    "title": "Shortest Paths: Dijkstra and Bellman-Ford",
+    "lessons": [
+      "single-source-shortest-paths-problem",
+      "dijkstras-algorithm-with-min-heap",
+      "why-dijkstra-fails-on-negative-weights",
+      "bellman-ford-algorithm",
+      "negative-cycle-detection"
+    ]
+  },
+  {
+    "id": "lesson-21",
+    "slug": "minimum-spanning-trees",
+    "title": "Minimum Spanning Trees: Kruskal and Prim",
+    "lessons": [
+      "minimum-spanning-tree-properties",
+      "kruskals-algorithm-with-union-find",
+      "prims-algorithm-vertex-expansion",
+      "kruskal-vs-prim-comparison",
+      "mst-vs-shortest-paths-differences"
+    ]
+  },
+  {
+    "id": "lesson-22",
+    "slug": "union-find",
+    "title": "Union-Find (Disjoint Set Union)",
+    "lessons": [
+      "disjoint-set-union-find-structure",
+      "find-with-path-compression",
+      "union-by-rank-and-size",
+      "inverse-ackermann-complexity",
+      "cycle-detection-with-union-find"
+    ]
+  },
+  {
+    "id": "lesson-23",
+    "slug": "backtracking",
+    "title": "Backtracking",
+    "lessons": [
+      "backtracking-search-state-space",
+      "generate-subsets-and-combinations",
+      "generate-permutations",
+      "n-queens-placement-and-pruning",
+      "state-restoration-the-unchoose-step"
+    ]
+  },
+  {
+    "id": "lesson-24",
+    "slug": "string-matching",
+    "title": "String Matching: Naive and KMP",
+    "lessons": [
+      "naive-string-matching-scan",
+      "kmp-prefix-function-pi-array",
+      "kmp-search-linear-time-matching",
+      "rabin-karp-rolling-hash",
+      "string-matching-algorithm-selection"
+    ]
+  }
+]

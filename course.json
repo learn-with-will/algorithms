@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/learn-with-will/course-shell/main/course.schema.json",
+  "id": "algorithms",
+  "name": "Algorithms Learn",
+  "subject": "Algorithms and Data Structures",
+  "description": "Learn algorithms and data structures in five-minute bites: Big-O, sorting, graphs, dynamic programming, trees, and string matching.",
+  "brand": {
+    "color": "#4f46e5",
+    "scale": {
+      "50": "#eef2ff",
+      "100": "#e0e7ff",
+      "200": "#c7d2fe",
+      "300": "#a5b4fc",
+      "400": "#818cf8",
+      "500": "#6366f1",
+      "600": "#4f46e5",
+      "700": "#4338ca",
+      "800": "#3730a3",
+      "900": "#312e81",
+      "950": "#1e1b4b"
+    },
+    "gradient": [
+      "#6366f1",
+      "#4f46e5",
+      "#4338ca"
+    ],
+    "gradientDark": [
+      "#818cf8",
+      "#6366f1",
+      "#4f46e5"
+    ]
+  },
+  "home": {
+    "badge": "Foundations, Data Structures & Complexity",
+    "headline": [
+      "Master algorithms one ",
+      "five\u2011minute bite",
+      " at a time."
+    ],
+    "searchExamples": [
+      "quicksort",
+      "binary search",
+      "dijkstra"
+    ],
+    "featuredLesson": "what-is-an-algorithm",
+    "featuredCode": {
+      "lang": "python",
+      "code": "def binary_search(arr: list[int], target: int) -> int:\n    low, high = 0, len(arr) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target: return mid\n        if arr[mid] < target: low = mid + 1\n        else: high = mid - 1\n    return -1"
+    },
+    "quizPreview": {
+      "topic": "Algorithmic Foundations",
+      "prompt": "What is the worst-case time complexity of quicksort with naive pivot selection?",
+      "options": [
+        "O(n log n)",
+        "O(n\u00b2)",
+        "O(n)"
+      ],
+      "selected": 1
+    }
+  },
+  "codeLanguages": [
+    "python",
+    "bash",
+    "json",
+    "text"
+  ]
+}

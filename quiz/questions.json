@@ -1,0 +1,3731 @@
+[
+  {
+    "id": "algorithmic-foundations-l01-q1",
+    "topic": "algorithmic-foundations",
+    "lesson": "what-is-an-algorithm",
+    "type": "single-choice",
+    "prompt": "Which of the following is NOT one of Knuth's required properties of an algorithm?",
+    "explanation": "An algorithm is language-independent. Finiteness, definiteness, input, output, and effectiveness are the required properties; the choice of programming language is not.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is written in a specific programming language"
+      },
+      {
+        "id": "b",
+        "text": "Finiteness \u2014 it terminates after finitely many steps"
+      },
+      {
+        "id": "c",
+        "text": "Definiteness \u2014 each step is precisely defined"
+      },
+      {
+        "id": "d",
+        "text": "Effectiveness \u2014 each step can actually be carried out"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "algorithmic-foundations-l01-q2",
+    "topic": "algorithmic-foundations",
+    "lesson": "problems-and-instances",
+    "type": "single-choice",
+    "prompt": "An algorithm is correct when...",
+    "explanation": "Correctness means halting and producing the specified output on EVERY valid instance \u2014 not just tested inputs, and independent of how fast or memory-light it is.",
+    "options": [
+      {
+        "id": "a",
+        "text": "it halts with the specified output for every valid input"
+      },
+      {
+        "id": "b",
+        "text": "it returns the right answer for the inputs you tested"
+      },
+      {
+        "id": "c",
+        "text": "it runs in O(n) time or better"
+      },
+      {
+        "id": "d",
+        "text": "it never uses more than a constant amount of memory"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "algorithmic-foundations-l01-q3",
+    "topic": "algorithmic-foundations",
+    "lesson": "pseudocode-and-specification",
+    "type": "multiple-choice",
+    "prompt": "Which statements about loop invariants are true? Select all that apply.",
+    "explanation": "Initialization, maintenance, and termination are the three parts. An invariant alone does NOT prove termination \u2014 you must separately show the loop ends.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The invariant must be true before the first iteration (initialization)"
+      },
+      {
+        "id": "b",
+        "text": "If true before an iteration, it must remain true before the next (maintenance)"
+      },
+      {
+        "id": "c",
+        "text": "At loop termination, the invariant helps establish the desired result"
+      },
+      {
+        "id": "d",
+        "text": "A valid loop invariant guarantees the loop terminates"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "algorithmic-foundations-l01-q4",
+    "topic": "algorithmic-foundations",
+    "lesson": "correctness-and-loop-invariants",
+    "type": "fill-blank",
+    "prompt": "The three parts of a loop-invariant argument are initialization, maintenance, and ______. (one word)",
+    "explanation": "Termination uses the invariant, together with the condition that ended the loop, to conclude the property you wanted to prove.",
+    "answer": [
+      "termination"
+    ]
+  },
+  {
+    "id": "algorithmic-foundations-l01-q5",
+    "topic": "algorithmic-foundations",
+    "lesson": "loop-invariant-in-action",
+    "type": "ordering",
+    "prompt": "Put the three steps of a loop-invariant proof in the order you apply them.",
+    "explanation": "You show it holds at the start, that every iteration keeps it holding, and finally that when the loop stops it gives the property you wanted.",
+    "items": [
+      {
+        "id": "init",
+        "text": "Initialization: the invariant holds before the first iteration"
+      },
+      {
+        "id": "maint",
+        "text": "Maintenance: each iteration preserves the invariant"
+      },
+      {
+        "id": "term",
+        "text": "Termination: the invariant yields the result when the loop ends"
+      }
+    ],
+    "answer": [
+      "init",
+      "maint",
+      "term"
+    ]
+  },
+  {
+    "id": "algorithmic-foundations-l01-q6",
+    "topic": "algorithmic-foundations",
+    "lesson": "guarding-preconditions",
+    "type": "match-pair",
+    "prompt": "Match each term with its meaning.",
+    "explanation": "A problem is the general spec; an instance is a specific input; a precondition is what must hold on entry; a loop invariant is preserved each iteration.",
+    "pairs": [
+      {
+        "left": "Problem",
+        "right": "The general input/output specification"
+      },
+      {
+        "left": "Instance",
+        "right": "One concrete input to a problem"
+      },
+      {
+        "left": "Precondition",
+        "right": "What is assumed true when a routine is entered"
+      },
+      {
+        "left": "Loop invariant",
+        "right": "A property preserved across every loop iteration"
+      }
+    ]
+  },
+  {
+    "id": "algorithmic-foundations-l02-q1",
+    "topic": "algorithmic-foundations",
+    "lesson": "asymptotic-notation-big-o",
+    "type": "single-choice",
+    "prompt": "Which statement is the correct definition of f(n) = O(g(n))?",
+    "explanation": "Big-O is an asymptotic upper bound: f is eventually bounded above by a constant multiple of g. Option (b) is the definition of \u03a9.",
+    "options": [
+      {
+        "id": "a",
+        "text": "There exist positive c and n\u2080 with 0 \u2264 f(n) \u2264 c\u00b7g(n) for all n \u2265 n\u2080"
+      },
+      {
+        "id": "b",
+        "text": "There exist positive c and n\u2080 with 0 \u2264 c\u00b7g(n) \u2264 f(n) for all n \u2265 n\u2080"
+      },
+      {
+        "id": "c",
+        "text": "f(n) equals g(n) for every n"
+      },
+      {
+        "id": "d",
+        "text": "f(n) is smaller than g(n) for at least one value of n"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "algorithmic-foundations-l02-q2",
+    "topic": "algorithmic-foundations",
+    "lesson": "omega-and-theta-notation",
+    "type": "single-choice",
+    "prompt": "What is the tight (\u0398) bound for 3n\u00b2 + 100n + 7?",
+    "explanation": "Drop the constant factor (3) and the lower-order terms (100n, 7); the fastest-growing term is n\u00b2, so the tight bound is \u0398(n\u00b2).",
+    "options": [
+      {
+        "id": "a",
+        "text": "\u0398(n\u00b2)"
+      },
+      {
+        "id": "b",
+        "text": "\u0398(n)"
+      },
+      {
+        "id": "c",
+        "text": "\u0398(n\u00b3)"
+      },
+      {
+        "id": "d",
+        "text": "\u0398(3n\u00b2 + 100n + 7)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "algorithmic-foundations-l02-q3",
+    "topic": "algorithmic-foundations",
+    "lesson": "common-complexity-classes",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "\u0398 implies O; exponential eventually beats any polynomial; worst case is a guarantee. But for small n, constant factors can let an O(n\u00b2) routine beat an O(n) one, so (d) is false.",
+    "options": [
+      {
+        "id": "a",
+        "text": "If f(n) = \u0398(g(n)) then f(n) = O(g(n))"
+      },
+      {
+        "id": "b",
+        "text": "For large enough n, 2\u207f exceeds n\u00b9\u2070\u2070"
+      },
+      {
+        "id": "c",
+        "text": "Worst-case time is an upper-bound guarantee on running time"
+      },
+      {
+        "id": "d",
+        "text": "An O(n\u00b2) algorithm is always slower than an O(n) algorithm for every input size"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "algorithmic-foundations-l02-q4",
+    "topic": "algorithmic-foundations",
+    "lesson": "space-complexity-and-auxiliary-memory",
+    "type": "fill-blank",
+    "prompt": "The worst-case time of linear search over n elements is O(____). (fill the growth term)",
+    "explanation": "In the worst case the target is absent or last, so all n elements are compared: O(n).",
+    "answer": [
+      "n"
+    ]
+  },
+  {
+    "id": "algorithmic-foundations-l02-q5",
+    "topic": "algorithmic-foundations",
+    "lesson": "amortized-analysis-fundamentals",
+    "type": "ordering",
+    "prompt": "Order these growth classes from slowest-growing to fastest-growing.",
+    "explanation": "The standard ladder: 1 < log n < n < n log n < n\u00b2 < 2\u207f.",
+    "items": [
+      {
+        "id": "const",
+        "text": "O(1)"
+      },
+      {
+        "id": "log",
+        "text": "O(log n)"
+      },
+      {
+        "id": "lin",
+        "text": "O(n)"
+      },
+      {
+        "id": "nlogn",
+        "text": "O(n log n)"
+      },
+      {
+        "id": "quad",
+        "text": "O(n\u00b2)"
+      },
+      {
+        "id": "exp",
+        "text": "O(2\u207f)"
+      }
+    ],
+    "answer": [
+      "const",
+      "log",
+      "lin",
+      "nlogn",
+      "quad",
+      "exp"
+    ]
+  },
+  {
+    "id": "algorithmic-foundations-l02-q6",
+    "topic": "algorithmic-foundations",
+    "lesson": "amortized-analysis-fundamentals",
+    "type": "match-pair",
+    "prompt": "Match each code pattern with its typical time complexity.",
+    "explanation": "Indexing is constant; one pass is linear; a nested pass is quadratic; halving each step is logarithmic.",
+    "pairs": [
+      {
+        "left": "Index into a list: a[i]",
+        "right": "O(1)"
+      },
+      {
+        "left": "Single loop over n items",
+        "right": "O(n)"
+      },
+      {
+        "left": "Two nested loops over n items",
+        "right": "O(n\u00b2)"
+      },
+      {
+        "left": "Repeatedly halving the search space",
+        "right": "O(log n)"
+      }
+    ]
+  },
+  {
+    "id": "linear-data-structures-l03-q1",
+    "topic": "linear-data-structures",
+    "lesson": "contiguous-memory-and-indexing",
+    "type": "single-choice",
+    "prompt": "Why is reading a[i] from an array O(1)?",
+    "explanation": "Contiguous storage means element i lives at a directly computable address, so access is constant-time arithmetic \u2014 no scanning or hashing.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The element's address is computed as base + i\u00b7w, independent of i and n"
+      },
+      {
+        "id": "b",
+        "text": "The array keeps a hash table mapping indices to values"
+      },
+      {
+        "id": "c",
+        "text": "The array scans from the front but stops early"
+      },
+      {
+        "id": "d",
+        "text": "Python caches recently used indices"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "linear-data-structures-l03-q2",
+    "topic": "linear-data-structures",
+    "lesson": "dynamic-array-geometric-growth",
+    "type": "single-choice",
+    "prompt": "Appending to a dynamic array is O(1) amortized. What makes the amortized bound hold?",
+    "explanation": "Geometric growth makes resizes exponentially rare; the copies form a geometric series bounded by O(n), so the average per append is O(1).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Capacity grows by a constant factor, so total resize work over n appends is O(n)"
+      },
+      {
+        "id": "b",
+        "text": "Resizing never actually copies elements"
+      },
+      {
+        "id": "c",
+        "text": "Each append grows the array by exactly one slot"
+      },
+      {
+        "id": "d",
+        "text": "The array is stored as a linked list"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "linear-data-structures-l03-q3",
+    "topic": "linear-data-structures",
+    "lesson": "array-insertion-and-deletion-costs",
+    "type": "multiple-choice",
+    "prompt": "Which operations on a Python list of length n are O(n)? Select all that apply.",
+    "explanation": "Front insert and front pop shift every following element (O(n)); membership scans the list (O(n)). Index assignment a[i] = x is O(1).",
+    "options": [
+      {
+        "id": "a",
+        "text": "a.insert(0, x)"
+      },
+      {
+        "id": "b",
+        "text": "a.pop(0)"
+      },
+      {
+        "id": "c",
+        "text": "x in a"
+      },
+      {
+        "id": "d",
+        "text": "a[i] = x"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "linear-data-structures-l03-q4",
+    "topic": "linear-data-structures",
+    "lesson": "list-slicing-and-copy-overheads",
+    "type": "fill-blank",
+    "prompt": "Averaging the cost of an occasional O(n) resize over many cheap appends is called ______ analysis. (one word)",
+    "explanation": "Amortized analysis gives a worst-case average cost per operation across a sequence \u2014 here O(1) per append despite individual O(n) resizes.",
+    "answer": [
+      "amortized"
+    ]
+  },
+  {
+    "id": "linear-data-structures-l03-q5",
+    "topic": "linear-data-structures",
+    "lesson": "preallocating-and-building-arrays",
+    "type": "ordering",
+    "prompt": "Order the steps a dynamic array takes when you append to a full array.",
+    "explanation": "On a full array you must allocate a bigger block and copy across before there is room to store the new element and bump the size.",
+    "items": [
+      {
+        "id": "alloc",
+        "text": "Allocate a new, larger backing block"
+      },
+      {
+        "id": "copy",
+        "text": "Copy the existing elements into the new block"
+      },
+      {
+        "id": "store",
+        "text": "Store the new element in the next slot"
+      },
+      {
+        "id": "size",
+        "text": "Increment the stored size"
+      }
+    ],
+    "answer": [
+      "alloc",
+      "copy",
+      "store",
+      "size"
+    ]
+  },
+  {
+    "id": "linear-data-structures-l03-q6",
+    "topic": "linear-data-structures",
+    "lesson": "preallocating-and-building-arrays",
+    "type": "match-pair",
+    "prompt": "Match each list operation with its time complexity.",
+    "explanation": "Indexing is constant, append is amortized constant, front insert is linear, and a slice copies the selected elements.",
+    "pairs": [
+      {
+        "left": "a[i]",
+        "right": "O(1)"
+      },
+      {
+        "left": "a.append(x)",
+        "right": "O(1) amortized"
+      },
+      {
+        "left": "a.insert(0, x)",
+        "right": "O(n)"
+      },
+      {
+        "left": "a[i:j]",
+        "right": "O(j \u2212 i)"
+      }
+    ]
+  },
+  {
+    "id": "linear-data-structures-l04-q1",
+    "topic": "linear-data-structures",
+    "lesson": "singly-linked-list-nodes",
+    "type": "single-choice",
+    "prompt": "What is the time complexity of reaching the k-th node of a singly linked list?",
+    "explanation": "Nodes are not contiguous, so there is no O(1) indexing; you traverse pointer by pointer, which costs O(k).",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(k) \u2014 you must follow k pointers from the head"
+      },
+      {
+        "id": "b",
+        "text": "O(1) \u2014 via address arithmetic like an array"
+      },
+      {
+        "id": "c",
+        "text": "O(log k) \u2014 the list is kept sorted"
+      },
+      {
+        "id": "d",
+        "text": "O(n\u00b2)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "linear-data-structures-l04-q2",
+    "topic": "linear-data-structures",
+    "lesson": "linked-list-insert-and-delete",
+    "type": "single-choice",
+    "prompt": "Why is inserting a new node at the head of a linked list O(1)?",
+    "explanation": "Unlike an array, no elements move \u2014 you just allocate a node, point it at the old head, and update the head pointer.",
+    "options": [
+      {
+        "id": "a",
+        "text": "You create one node and repoint the head; nothing shifts"
+      },
+      {
+        "id": "b",
+        "text": "The list copies all elements into a bigger block"
+      },
+      {
+        "id": "c",
+        "text": "The head is stored in a hash table"
+      },
+      {
+        "id": "d",
+        "text": "Every element moves one position right"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "linear-data-structures-l04-q3",
+    "topic": "linear-data-structures",
+    "lesson": "doubly-linked-lists",
+    "type": "multiple-choice",
+    "prompt": "Which statements comparing linked lists and arrays are true? Select all that apply.",
+    "explanation": "Arrays win at indexing and memory density; linked lists win at O(1) head/known-node splicing. Linked lists have no O(1) random access.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Arrays give O(1) indexing; linked lists do not"
+      },
+      {
+        "id": "b",
+        "text": "Linked lists give O(1) insertion at the head; arrays do not"
+      },
+      {
+        "id": "c",
+        "text": "Linked lists use extra memory per node for pointers"
+      },
+      {
+        "id": "d",
+        "text": "Linked lists allow O(1) random access by index"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "linear-data-structures-l04-q4",
+    "topic": "linear-data-structures",
+    "lesson": "sentinel-nodes-for-edge-cases",
+    "type": "fill-blank",
+    "prompt": "A placeholder node that always precedes the first real element, removing head/empty edge cases, is called a ______ node. (dummy or ______)",
+    "explanation": "A sentinel (a.k.a. dummy) node gives every real node a predecessor, so insertion/deletion at the head needs no special case.",
+    "answer": [
+      "sentinel",
+      "dummy"
+    ]
+  },
+  {
+    "id": "linear-data-structures-l04-q5",
+    "topic": "linear-data-structures",
+    "lesson": "reversing-a-linked-list",
+    "type": "ordering",
+    "prompt": "Order the steps to insert a new value at the head of a singly linked list.",
+    "explanation": "Build the node, point it at the current head, then move the head to the new node \u2014 order matters so you don't lose the old head.",
+    "items": [
+      {
+        "id": "make",
+        "text": "Create a new node holding the value"
+      },
+      {
+        "id": "point",
+        "text": "Set new_node.next = head"
+      },
+      {
+        "id": "head",
+        "text": "Set head = new_node"
+      }
+    ],
+    "answer": [
+      "make",
+      "point",
+      "head"
+    ]
+  },
+  {
+    "id": "linear-data-structures-l04-q6",
+    "topic": "linear-data-structures",
+    "lesson": "reversing-a-linked-list",
+    "type": "match-pair",
+    "prompt": "Match each linked-list operation with its time complexity.",
+    "explanation": "Head insertion and deleting a held node in a doubly linked list are constant; searching and indexing require traversal.",
+    "pairs": [
+      {
+        "left": "Insert at head",
+        "right": "O(1) pointer prepend"
+      },
+      {
+        "left": "Search by value",
+        "right": "O(n) linear scan"
+      },
+      {
+        "left": "Delete a node you hold (doubly linked)",
+        "right": "O(1) pointer unlinking"
+      },
+      {
+        "left": "Access the k-th element",
+        "right": "O(k) sequential traversal"
+      }
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l05-q1",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "lifo-stack-operations",
+    "type": "single-choice",
+    "prompt": "A stack follows which access discipline?",
+    "explanation": "A stack pushes and pops at the same end (the top), so the most recently added element is removed first \u2014 LIFO.",
+    "options": [
+      {
+        "id": "a",
+        "text": "LIFO \u2014 last in, first out"
+      },
+      {
+        "id": "b",
+        "text": "FIFO \u2014 first in, first out"
+      },
+      {
+        "id": "c",
+        "text": "Sorted order"
+      },
+      {
+        "id": "d",
+        "text": "Random order"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l05-q2",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "balanced-brackets-with-stacks",
+    "type": "single-choice",
+    "prompt": "Which Python container gives O(1) enqueue and dequeue for a FIFO queue?",
+    "explanation": "deque supports O(1) operations at both ends. A list's pop(0) is O(1)? No \u2014 it shifts every element and is O(n).",
+    "options": [
+      {
+        "id": "a",
+        "text": "collections.deque (append / popleft)"
+      },
+      {
+        "id": "b",
+        "text": "list (append / pop(0))"
+      },
+      {
+        "id": "c",
+        "text": "set"
+      },
+      {
+        "id": "d",
+        "text": "tuple"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l05-q3",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "fifo-queue-operations",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "Lists are great stacks (O(1) at the end) and deques are great queues (O(1) both ends). list.pop(0) is O(n), so (d) is false.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Push/pop at the end of a Python list are O(1)"
+      },
+      {
+        "id": "b",
+        "text": "deque supports O(1) append and popleft"
+      },
+      {
+        "id": "c",
+        "text": "A stack is LIFO and a queue is FIFO"
+      },
+      {
+        "id": "d",
+        "text": "Using list.pop(0) as a dequeue is O(1)"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l05-q4",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "collections-deque-vs-list-pop0",
+    "type": "fill-blank",
+    "prompt": "A queue serves elements in ______ order. (four-letter acronym)",
+    "explanation": "First In, First Out: the earliest-enqueued element is dequeued first.",
+    "answer": [
+      "FIFO"
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l05-q5",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "monotonic-stack-technique",
+    "type": "ordering",
+    "prompt": "Values 1, 2, 3 are pushed onto a stack in that order, then popped. Order the values by when they are popped (first popped first).",
+    "explanation": "A stack is LIFO, so the last pushed (3) is popped first, then 2, then 1.",
+    "items": [
+      {
+        "id": "three",
+        "text": "3"
+      },
+      {
+        "id": "two",
+        "text": "2"
+      },
+      {
+        "id": "one",
+        "text": "1"
+      }
+    ],
+    "answer": [
+      "three",
+      "two",
+      "one"
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l05-q6",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "monotonic-stack-technique",
+    "type": "match-pair",
+    "prompt": "Match each item with its property.",
+    "explanation": "Stacks are LIFO, queues are FIFO, deque is O(1) at both ends, and removing from the front of a list is O(n).",
+    "pairs": [
+      {
+        "left": "Stack",
+        "right": "LIFO"
+      },
+      {
+        "left": "Queue",
+        "right": "FIFO"
+      },
+      {
+        "left": "collections.deque",
+        "right": "O(1) at both ends"
+      },
+      {
+        "left": "list.pop(0)",
+        "right": "O(n)"
+      }
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l06-q1",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "hash-function-principles",
+    "type": "single-choice",
+    "prompt": "With a good hash function and bounded load factor, what is the average time of a hash-table lookup \u2014 and its worst case?",
+    "explanation": "Even distribution keeps buckets tiny (O(1) average), but if every key collides into one bucket you scan all n entries (O(n) worst case).",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(1) average, O(n) worst case"
+      },
+      {
+        "id": "b",
+        "text": "O(log n) average, O(n) worst case"
+      },
+      {
+        "id": "c",
+        "text": "O(1) average, O(1) worst case"
+      },
+      {
+        "id": "d",
+        "text": "O(n) average, O(n log n) worst case"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l06-q2",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "collision-resolution-by-chaining",
+    "type": "single-choice",
+    "prompt": "The load factor of a hash table is defined as...",
+    "explanation": "Load factor \u03b1 = n/m measures fullness; as it grows, collisions increase, which is why tables resize to keep \u03b1 bounded.",
+    "options": [
+      {
+        "id": "a",
+        "text": "n / m \u2014 entries divided by buckets"
+      },
+      {
+        "id": "b",
+        "text": "m / n \u2014 buckets divided by entries"
+      },
+      {
+        "id": "c",
+        "text": "the length of the longest chain"
+      },
+      {
+        "id": "d",
+        "text": "the number of hash collisions so far"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l06-q3",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "open-addressing-and-probing",
+    "type": "multiple-choice",
+    "prompt": "Which statements about hash tables are true? Select all that apply.",
+    "explanation": "Chaining and open addressing are the two collision strategies, and keys must be hashable. The O(1) is an average, not a worst-case guarantee.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Chaining stores colliding entries in a per-bucket list"
+      },
+      {
+        "id": "b",
+        "text": "Open addressing probes for another open slot on a collision"
+      },
+      {
+        "id": "c",
+        "text": "Python dict and set keys must be hashable"
+      },
+      {
+        "id": "d",
+        "text": "Hash-table lookup is guaranteed O(1) in the worst case"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l06-q4",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "load-factor-and-dynamic-rehashing",
+    "type": "fill-blank",
+    "prompt": "The two main collision-resolution strategies are chaining and ______ addressing. (one word)",
+    "explanation": "Open addressing keeps all entries in the bucket array and probes for the next available slot when a collision occurs.",
+    "answer": [
+      "open"
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l06-q5",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "hash-table-worst-case-pitfalls",
+    "type": "ordering",
+    "prompt": "Order the steps of a hash-table lookup (chaining).",
+    "explanation": "Hash the key, map it to a bucket, scan that bucket's short chain, and compare keys to find the entry.",
+    "items": [
+      {
+        "id": "hash",
+        "text": "Compute hash(key)"
+      },
+      {
+        "id": "index",
+        "text": "Reduce it to a bucket index (mod m)"
+      },
+      {
+        "id": "scan",
+        "text": "Examine that bucket's chain"
+      },
+      {
+        "id": "compare",
+        "text": "Compare stored keys for equality and return the match"
+      }
+    ],
+    "answer": [
+      "hash",
+      "index",
+      "scan",
+      "compare"
+    ]
+  },
+  {
+    "id": "stacks-queues-and-hash-tables-l06-q6",
+    "topic": "stacks-queues-and-hash-tables",
+    "lesson": "hash-table-worst-case-pitfalls",
+    "type": "match-pair",
+    "prompt": "Match each term with its meaning.",
+    "explanation": "These are the core hash-table concepts: fullness ratio, the two collision strategies, and the resize operation.",
+    "pairs": [
+      {
+        "left": "Load factor",
+        "right": "n / m (entries per buckets)"
+      },
+      {
+        "left": "Chaining",
+        "right": "Bucket holds a list of colliding entries"
+      },
+      {
+        "left": "Open addressing",
+        "right": "Probe for another slot on collision"
+      },
+      {
+        "left": "Rehash",
+        "right": "Recompute buckets for all entries on resize"
+      }
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l07-q1",
+    "topic": "recursion-and-searching",
+    "lesson": "anatomy-of-a-recursive-function",
+    "type": "single-choice",
+    "prompt": "What part of a recursive function makes it terminate?",
+    "explanation": "The base case stops the recursion. Without a reachable base case, calls continue until Python raises RecursionError.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The base case, which returns directly without recursing"
+      },
+      {
+        "id": "b",
+        "text": "The recursive case"
+      },
+      {
+        "id": "c",
+        "text": "The call stack"
+      },
+      {
+        "id": "d",
+        "text": "The return type annotation"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "recursion-and-searching-l07-q2",
+    "topic": "recursion-and-searching",
+    "lesson": "call-stack-and-activation-frames",
+    "type": "single-choice",
+    "prompt": "What does the runtime use to keep track of pending (not-yet-returned) function calls?",
+    "explanation": "Each call pushes a stack frame with its locals and return point; the frame is popped when the call returns. Depth = stack space used.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The call stack, pushing a frame per call"
+      },
+      {
+        "id": "b",
+        "text": "A hash table of calls"
+      },
+      {
+        "id": "c",
+        "text": "A queue of calls"
+      },
+      {
+        "id": "d",
+        "text": "A binary search tree"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "recursion-and-searching-l07-q3",
+    "topic": "recursion-and-searching",
+    "lesson": "recursion-depth-limits-in-python",
+    "type": "multiple-choice",
+    "prompt": "Which statements about recursion in Python are true? Select all that apply.",
+    "explanation": "Frames stack up, a bad base case never stops, and naive Fibonacci is exponential. CPython has NO tail-call optimization, so (d) is false.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Each recursive call adds a frame to the call stack"
+      },
+      {
+        "id": "b",
+        "text": "A missing or unreachable base case leads to infinite recursion (RecursionError)"
+      },
+      {
+        "id": "c",
+        "text": "Naive recursive Fibonacci runs in exponential time"
+      },
+      {
+        "id": "d",
+        "text": "CPython optimizes tail calls so tail recursion uses O(1) stack"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l07-q4",
+    "topic": "recursion-and-searching",
+    "lesson": "tail-recursion-and-iteration",
+    "type": "fill-blank",
+    "prompt": "The naive recursive Fibonacci runs in ______ time (name the growth class in one word).",
+    "explanation": "It recomputes overlapping subproblems, giving \u0398(\u03c6\u207f) \u2248 exponential growth; memoization reduces it to linear.",
+    "answer": [
+      "exponential"
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l07-q5",
+    "topic": "recursion-and-searching",
+    "lesson": "divide-and-conquer-recurrence",
+    "type": "ordering",
+    "prompt": "In evaluating factorial(3), order the calls by when they RETURN (first to return first).",
+    "explanation": "The recursion descends to the base case, which returns first; the stack then unwinds outward, so factorial(3) returns last.",
+    "items": [
+      {
+        "id": "f1",
+        "text": "factorial(1) returns 1 (base case)"
+      },
+      {
+        "id": "f2",
+        "text": "factorial(2) returns 2"
+      },
+      {
+        "id": "f3",
+        "text": "factorial(3) returns 6"
+      }
+    ],
+    "answer": [
+      "f1",
+      "f2",
+      "f3"
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l07-q6",
+    "topic": "recursion-and-searching",
+    "lesson": "divide-and-conquer-recurrence",
+    "type": "match-pair",
+    "prompt": "Match each term with its meaning.",
+    "explanation": "These are the core recursion concepts: the two cases, where calls live, and the space cost.",
+    "pairs": [
+      {
+        "left": "Base case",
+        "right": "Returns directly and stops the recursion"
+      },
+      {
+        "left": "Recursive case",
+        "right": "Reduces the input and calls itself"
+      },
+      {
+        "left": "Call stack",
+        "right": "Holds a frame per pending call"
+      },
+      {
+        "left": "Recursion depth",
+        "right": "Maximum stacked frames = space used"
+      }
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l08-q1",
+    "topic": "sorting-algorithms",
+    "lesson": "bubble-sort-mechanics",
+    "type": "single-choice",
+    "prompt": "Which elementary sort runs in O(n) on already-sorted (or nearly-sorted) input?",
+    "explanation": "Insertion sort (and early-exit bubble sort) does almost no shifting on sorted data, giving O(n) best case. Selection sort has no best-case speedup.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Insertion sort"
+      },
+      {
+        "id": "b",
+        "text": "Selection sort"
+      },
+      {
+        "id": "c",
+        "text": "None \u2014 they are all always \u0398(n\u00b2)"
+      },
+      {
+        "id": "d",
+        "text": "Selection sort, but only for reverse-sorted input"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l08-q2",
+    "topic": "sorting-algorithms",
+    "lesson": "selection-sort-and-write-minimization",
+    "type": "single-choice",
+    "prompt": "Which of the three elementary sorts is NOT stable in its standard form?",
+    "explanation": "The standard swap-based selection sort can reorder equal keys, so it is not stable. Insertion and bubble sort are stable.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Selection sort"
+      },
+      {
+        "id": "b",
+        "text": "Insertion sort"
+      },
+      {
+        "id": "c",
+        "text": "Bubble sort"
+      },
+      {
+        "id": "d",
+        "text": "All three are stable"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l08-q3",
+    "topic": "sorting-algorithms",
+    "lesson": "insertion-sort-and-online-processing",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "Insertion is O(n) best case, all three are in-place, and selection makes only O(n) swaps. Bubble sort's worst case is \u0398(n\u00b2), not O(n log n).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Insertion sort's best case is O(n)"
+      },
+      {
+        "id": "b",
+        "text": "All three elementary sorts are in-place (O(1) extra space)"
+      },
+      {
+        "id": "c",
+        "text": "Selection sort performs only O(n) swaps"
+      },
+      {
+        "id": "d",
+        "text": "Bubble sort's worst case is O(n log n)"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l08-q4",
+    "topic": "sorting-algorithms",
+    "lesson": "sorting-stability-explained",
+    "type": "fill-blank",
+    "prompt": "A sort is called ______ if equal elements keep their original relative order. (one word)",
+    "explanation": "Stability preserves the prior ordering of equal keys \u2014 important when sorting records by successive fields.",
+    "answer": [
+      "stable"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l08-q5",
+    "topic": "sorting-algorithms",
+    "lesson": "in-place-sorting-trade-offs",
+    "type": "ordering",
+    "prompt": "Order the steps of inserting one element (the key) during insertion sort.",
+    "explanation": "Each outer step takes the next key, slides larger elements right to open a gap, and drops the key into place \u2014 keeping the prefix sorted.",
+    "items": [
+      {
+        "id": "take",
+        "text": "Take the next element as the key"
+      },
+      {
+        "id": "shift",
+        "text": "Shift larger sorted elements one place right"
+      },
+      {
+        "id": "place",
+        "text": "Place the key in the resulting gap"
+      }
+    ],
+    "answer": [
+      "take",
+      "shift",
+      "place"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l08-q6",
+    "topic": "sorting-algorithms",
+    "lesson": "in-place-sorting-trade-offs",
+    "type": "match-pair",
+    "prompt": "Match each sort with a distinguishing property.",
+    "explanation": "Each sort has a signature: insertion is adaptive, selection minimizes swaps, bubble swaps neighbors, and Timsort is the O(n log n) production default.",
+    "pairs": [
+      {
+        "left": "Insertion sort",
+        "right": "O(n) on nearly-sorted input"
+      },
+      {
+        "left": "Selection sort",
+        "right": "Only O(n) swaps, not stable"
+      },
+      {
+        "left": "Bubble sort",
+        "right": "Swaps adjacent out-of-order pairs"
+      },
+      {
+        "left": "Timsort (list.sort)",
+        "right": "O(n log n), stable, adaptive"
+      }
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l09-q1",
+    "topic": "recursion-and-searching",
+    "lesson": "linear-search-and-sentinel-search",
+    "type": "single-choice",
+    "prompt": "What is the required precondition for binary search to work correctly?",
+    "explanation": "Binary search decides which half to discard based on order, so the sequence must be sorted; on unsorted data the result is meaningless.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The input must be sorted"
+      },
+      {
+        "id": "b",
+        "text": "The input must contain no duplicates"
+      },
+      {
+        "id": "c",
+        "text": "The input must be a power of two in length"
+      },
+      {
+        "id": "d",
+        "text": "The input must be stored in a linked list"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "recursion-and-searching-l09-q2",
+    "topic": "recursion-and-searching",
+    "lesson": "binary-search-algorithm",
+    "type": "single-choice",
+    "prompt": "What is the time complexity of binary search on n sorted elements?",
+    "explanation": "Each step halves the search window, so it finishes in about log\u2082 n comparisons.",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(log n)"
+      },
+      {
+        "id": "b",
+        "text": "O(n)"
+      },
+      {
+        "id": "c",
+        "text": "O(n log n)"
+      },
+      {
+        "id": "d",
+        "text": "O(1)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "recursion-and-searching-l09-q3",
+    "topic": "recursion-and-searching",
+    "lesson": "binary-search-off-by-one-traps",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "Binary search needs sorted data and is O(log n); bisect_left gives the leftmost insertion point. On large sorted data, binary search's O(log n) beats linear's O(n).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Binary search requires sorted input; linear search does not"
+      },
+      {
+        "id": "b",
+        "text": "Binary search runs in O(log n) time"
+      },
+      {
+        "id": "c",
+        "text": "bisect_left returns the leftmost valid insertion index for a value"
+      },
+      {
+        "id": "d",
+        "text": "Linear search is faster than binary search on large sorted data"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l09-q4",
+    "topic": "recursion-and-searching",
+    "lesson": "python-bisect-module",
+    "type": "fill-blank",
+    "prompt": "Each step of binary search discards about one ______ of the remaining elements. (one word)",
+    "explanation": "Comparing against the middle lets you eliminate half the window every step \u2014 the source of the O(log n) bound.",
+    "answer": [
+      "half"
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l09-q5",
+    "topic": "recursion-and-searching",
+    "lesson": "binary-search-on-answer-spaces",
+    "type": "ordering",
+    "prompt": "Order the steps of one binary-search iteration.",
+    "explanation": "Find the middle, compare, throw away the impossible half, and continue on what remains until the target is found or the window is empty.",
+    "items": [
+      {
+        "id": "mid",
+        "text": "Compute the midpoint index"
+      },
+      {
+        "id": "cmp",
+        "text": "Compare the middle element with the target"
+      },
+      {
+        "id": "discard",
+        "text": "Discard the half that cannot contain the target"
+      },
+      {
+        "id": "repeat",
+        "text": "Repeat on the remaining half"
+      }
+    ],
+    "answer": [
+      "mid",
+      "cmp",
+      "discard",
+      "repeat"
+    ]
+  },
+  {
+    "id": "recursion-and-searching-l09-q6",
+    "topic": "recursion-and-searching",
+    "lesson": "binary-search-on-answer-spaces",
+    "type": "match-pair",
+    "prompt": "Match each search tool with its behaviour.",
+    "explanation": "Linear search is general but slow; binary search is fast but needs sorting; bisect_left/right give the two insertion points around equal values.",
+    "pairs": [
+      {
+        "left": "Linear search",
+        "right": "O(n) scan; works on unsorted data"
+      },
+      {
+        "left": "Binary search",
+        "right": "O(log n) on sorted data"
+      },
+      {
+        "left": "bisect_left",
+        "right": "Leftmost insertion index (before equals)"
+      },
+      {
+        "left": "bisect_right",
+        "right": "Rightmost insertion index (after equals)"
+      }
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l10-q1",
+    "topic": "sorting-algorithms",
+    "lesson": "divide-and-conquer-paradigm",
+    "type": "single-choice",
+    "prompt": "What is merge sort's worst-case time complexity?",
+    "explanation": "Merge sort is \u0398(n log n) in every case \u2014 the recursion tree has log n levels, each doing \u0398(n) merge work.",
+    "options": [
+      {
+        "id": "a",
+        "text": "\u0398(n log n)"
+      },
+      {
+        "id": "b",
+        "text": "\u0398(n\u00b2)"
+      },
+      {
+        "id": "c",
+        "text": "\u0398(n)"
+      },
+      {
+        "id": "d",
+        "text": "\u0398(log n)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l10-q2",
+    "topic": "sorting-algorithms",
+    "lesson": "merge-step-mechanics",
+    "type": "single-choice",
+    "prompt": "Is the standard array-based merge sort in-place?",
+    "explanation": "The merge step writes into an auxiliary array, so merge sort uses O(n) extra space and is not in-place.",
+    "options": [
+      {
+        "id": "a",
+        "text": "No \u2014 it needs O(n) auxiliary space for merging"
+      },
+      {
+        "id": "b",
+        "text": "Yes \u2014 it sorts using O(1) extra space"
+      },
+      {
+        "id": "c",
+        "text": "Yes \u2014 it swaps elements like quicksort"
+      },
+      {
+        "id": "d",
+        "text": "Only when the input is already sorted"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l10-q3",
+    "topic": "sorting-algorithms",
+    "lesson": "merge-sort-implementation",
+    "type": "multiple-choice",
+    "prompt": "Which statements about merge sort are true? Select all that apply.",
+    "explanation": "Merge sort is stable, guaranteed \u0398(n log n), and its merge is linear. It is NOT in-place \u2014 it uses O(n) auxiliary space.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is stable when ties are taken from the left half"
+      },
+      {
+        "id": "b",
+        "text": "Its \u0398(n log n) bound holds for every input"
+      },
+      {
+        "id": "c",
+        "text": "The merge step runs in linear time"
+      },
+      {
+        "id": "d",
+        "text": "It sorts in place with O(1) extra space"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l10-q4",
+    "topic": "sorting-algorithms",
+    "lesson": "merge-sort-space-trade-off",
+    "type": "fill-blank",
+    "prompt": "Merge sort's recurrence is T(n) = 2\u00b7T(n/2) + ______, where the added term is the linear-time merge. (write the growth term, e.g. O(n))",
+    "explanation": "The merge of two halves is linear, so the combine cost is \u0398(n); the recurrence solves to \u0398(n log n).",
+    "answer": [
+      "O(n)",
+      "\u0398(n)",
+      "n",
+      "cn"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l10-q5",
+    "topic": "sorting-algorithms",
+    "lesson": "master-theorem-for-divide-and-conquer",
+    "type": "ordering",
+    "prompt": "Order the three steps of the divide-and-conquer paradigm as applied by merge sort.",
+    "explanation": "Divide and conquer splits the problem, solves the pieces recursively, then combines \u2014 here the combine step is the linear merge.",
+    "items": [
+      {
+        "id": "divide",
+        "text": "Divide the array into two halves"
+      },
+      {
+        "id": "conquer",
+        "text": "Conquer: sort each half recursively"
+      },
+      {
+        "id": "combine",
+        "text": "Combine: merge the two sorted halves"
+      }
+    ],
+    "answer": [
+      "divide",
+      "conquer",
+      "combine"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l10-q6",
+    "topic": "sorting-algorithms",
+    "lesson": "master-theorem-for-divide-and-conquer",
+    "type": "match-pair",
+    "prompt": "Match each merge-sort property with its value.",
+    "explanation": "Merge sort trades O(n) extra space for a guaranteed \u0398(n log n), stable, but non-in-place sort.",
+    "pairs": [
+      {
+        "left": "Worst-case time",
+        "right": "\u0398(n log n)"
+      },
+      {
+        "left": "Extra space",
+        "right": "O(n)"
+      },
+      {
+        "left": "Stable?",
+        "right": "Yes"
+      },
+      {
+        "left": "In-place?",
+        "right": "No"
+      }
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l11-q1",
+    "topic": "sorting-algorithms",
+    "lesson": "lomuto-partition-scheme",
+    "type": "single-choice",
+    "prompt": "After a partition step in quicksort, what is true about the pivot?",
+    "explanation": "Partitioning places the pivot where it belongs permanently; the two sides are then sorted recursively.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is in its final sorted position, with smaller elements before and larger after"
+      },
+      {
+        "id": "b",
+        "text": "It is always at the middle index of the array"
+      },
+      {
+        "id": "c",
+        "text": "It is removed from the array"
+      },
+      {
+        "id": "d",
+        "text": "It is duplicated on both sides"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l11-q2",
+    "topic": "sorting-algorithms",
+    "lesson": "hoare-partition-scheme",
+    "type": "single-choice",
+    "prompt": "What are quicksort's average and worst-case time complexities?",
+    "explanation": "Balanced partitions give \u0398(n log n) on average; maximally unbalanced partitions (extreme pivots) give the \u0398(n\u00b2) worst case.",
+    "options": [
+      {
+        "id": "a",
+        "text": "\u0398(n log n) average, \u0398(n\u00b2) worst"
+      },
+      {
+        "id": "b",
+        "text": "\u0398(n log n) average, \u0398(n log n) worst"
+      },
+      {
+        "id": "c",
+        "text": "\u0398(n) average, \u0398(n log n) worst"
+      },
+      {
+        "id": "d",
+        "text": "\u0398(n\u00b2) average, \u0398(n\u00b2) worst"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l11-q3",
+    "topic": "sorting-algorithms",
+    "lesson": "quicksort-recursion-and-base-cases",
+    "type": "multiple-choice",
+    "prompt": "Which statements about quicksort are true? Select all that apply.",
+    "explanation": "Quicksort is in-place, randomization defeats worst-case inputs, and a naive pivot is quadratic on sorted data. It is NOT stable.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It sorts in place (aside from the recursion stack)"
+      },
+      {
+        "id": "b",
+        "text": "Randomizing the pivot makes the worst case unlikely on any input"
+      },
+      {
+        "id": "c",
+        "text": "A naive last-element pivot is \u0398(n\u00b2) on already-sorted input"
+      },
+      {
+        "id": "d",
+        "text": "In-place quicksort is stable"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l11-q4",
+    "topic": "sorting-algorithms",
+    "lesson": "quicksort-worst-case-mitigation",
+    "type": "fill-blank",
+    "prompt": "The quicksort step that rearranges elements around the pivot is called ______. (one word)",
+    "explanation": "Partitioning splits the array into elements \u2264 pivot and elements > pivot, fixing the pivot's final position.",
+    "answer": [
+      "partition",
+      "partitioning"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l11-q5",
+    "topic": "sorting-algorithms",
+    "lesson": "quickselect-kth-smallest-element",
+    "type": "ordering",
+    "prompt": "Order the steps of a quicksort call on a subarray with more than one element.",
+    "explanation": "Pick a pivot, partition to place it, then recurse on each side; there is no combine step because partitioning already separates the sides.",
+    "items": [
+      {
+        "id": "pivot",
+        "text": "Choose a pivot"
+      },
+      {
+        "id": "part",
+        "text": "Partition the subarray around the pivot"
+      },
+      {
+        "id": "left",
+        "text": "Recursively sort the left (smaller) side"
+      },
+      {
+        "id": "right",
+        "text": "Recursively sort the right (larger) side"
+      }
+    ],
+    "answer": [
+      "pivot",
+      "part",
+      "left",
+      "right"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l11-q6",
+    "topic": "sorting-algorithms",
+    "lesson": "quickselect-kth-smallest-element",
+    "type": "match-pair",
+    "prompt": "Match each concept with its description.",
+    "explanation": "These capture quicksort's core: the pivot, the degenerate case, the fix, and the selection variant.",
+    "pairs": [
+      {
+        "left": "Pivot",
+        "right": "Element partitioning is organized around"
+      },
+      {
+        "left": "Worst case \u0398(n\u00b2)",
+        "right": "Pivot repeatedly smallest or largest"
+      },
+      {
+        "left": "Randomized pivot",
+        "right": "Avoids worst case on any input"
+      },
+      {
+        "left": "Quickselect",
+        "right": "Finds the k-th smallest in O(n) average"
+      }
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l12-q1",
+    "topic": "trees-and-heaps",
+    "lesson": "binary-heap-properties",
+    "type": "single-choice",
+    "prompt": "What is the time complexity of building a heap from n elements bottom-up (heapify)?",
+    "explanation": "Bottom-up build-heap is O(n): most nodes are near the bottom and sift down only a little, and the total sift work sums to O(n).",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(n)"
+      },
+      {
+        "id": "b",
+        "text": "O(n log n)"
+      },
+      {
+        "id": "c",
+        "text": "O(log n)"
+      },
+      {
+        "id": "d",
+        "text": "O(n\u00b2)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "trees-and-heaps-l12-q2",
+    "topic": "trees-and-heaps",
+    "lesson": "array-representation-of-heaps",
+    "type": "single-choice",
+    "prompt": "What is the cost of extracting the minimum from a min-heap of n elements?",
+    "explanation": "Removing the root moves the last element up and sifts it down along one root-to-leaf path \u2014 O(log n). Only peeking (not removing) is O(1).",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(log n)"
+      },
+      {
+        "id": "b",
+        "text": "O(1)"
+      },
+      {
+        "id": "c",
+        "text": "O(n)"
+      },
+      {
+        "id": "d",
+        "text": "O(n log n)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "trees-and-heaps-l12-q3",
+    "topic": "trees-and-heaps",
+    "lesson": "sift-up-and-sift-down",
+    "type": "multiple-choice",
+    "prompt": "Which statements about binary heaps are true? Select all that apply.",
+    "explanation": "Heaps are array-backed complete trees with O(log n) push/pop and O(n) construction. Heapsort is in-place but NOT stable.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A heap is a complete binary tree stored in an array"
+      },
+      {
+        "id": "b",
+        "text": "heappush and heappop are O(log n)"
+      },
+      {
+        "id": "c",
+        "text": "Building a heap from an existing array is O(n)"
+      },
+      {
+        "id": "d",
+        "text": "Heapsort is stable"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l12-q4",
+    "topic": "trees-and-heaps",
+    "lesson": "linear-time-build-heap",
+    "type": "fill-blank",
+    "prompt": "Python's heapq module implements a ______-heap. (min or max)",
+    "explanation": "heapq is a min-heap; for max-heap behaviour you negate the values or use heapq.nlargest.",
+    "answer": [
+      "min"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l12-q5",
+    "topic": "trees-and-heaps",
+    "lesson": "heapsort-and-heapq-module",
+    "type": "ordering",
+    "prompt": "Order the steps to pop the minimum from a min-heap.",
+    "explanation": "Record the root, replace it with the last element to keep the tree complete, then sift down to restore the heap property.",
+    "items": [
+      {
+        "id": "take",
+        "text": "Take the root as the result (the minimum)"
+      },
+      {
+        "id": "move",
+        "text": "Move the last element into the root position"
+      },
+      {
+        "id": "sift",
+        "text": "Sift the new root down until the heap property holds"
+      }
+    ],
+    "answer": [
+      "take",
+      "move",
+      "sift"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l12-q6",
+    "topic": "trees-and-heaps",
+    "lesson": "heapsort-and-heapq-module",
+    "type": "match-pair",
+    "prompt": "Match each heap operation with its time complexity.",
+    "explanation": "Peeking the root is constant; push/pop sift along one path (log n); constructing from an array is linear.",
+    "pairs": [
+      {
+        "left": "Peek min/max",
+        "right": "O(1) root access"
+      },
+      {
+        "left": "Push",
+        "right": "O(log n) sift-up"
+      },
+      {
+        "left": "Pop (extract)",
+        "right": "O(log n) sift-down"
+      },
+      {
+        "left": "Build-heap",
+        "right": "O(n) bottom-up heapify"
+      }
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l13-q1",
+    "topic": "trees-and-heaps",
+    "lesson": "binary-search-tree-property",
+    "type": "single-choice",
+    "prompt": "Which statement correctly describes the binary-search-tree property?",
+    "explanation": "The property is recursive: the ENTIRE left subtree is smaller than a node and the entire right subtree is larger \u2014 not just the immediate children.",
+    "options": [
+      {
+        "id": "a",
+        "text": "For every node, all keys in the left subtree are smaller and all in the right subtree are larger"
+      },
+      {
+        "id": "b",
+        "text": "Every node has at most two children"
+      },
+      {
+        "id": "c",
+        "text": "The left child is smaller than the right child, with no constraint on subtrees"
+      },
+      {
+        "id": "d",
+        "text": "Every level of the tree is completely full"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "trees-and-heaps-l13-q2",
+    "topic": "trees-and-heaps",
+    "lesson": "bst-search-and-insertion",
+    "type": "single-choice",
+    "prompt": "Which traversal of a BST produces keys in ascending sorted order?",
+    "explanation": "Visiting the smaller left subtree before the node and the larger right subtree after yields ascending order.",
+    "options": [
+      {
+        "id": "a",
+        "text": "In-order (left, node, right)"
+      },
+      {
+        "id": "b",
+        "text": "Pre-order (node, left, right)"
+      },
+      {
+        "id": "c",
+        "text": "Post-order (left, right, node)"
+      },
+      {
+        "id": "d",
+        "text": "Level-order (breadth-first)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "trees-and-heaps-l13-q3",
+    "topic": "trees-and-heaps",
+    "lesson": "bst-node-deletion",
+    "type": "multiple-choice",
+    "prompt": "Which statements about BSTs are true? Select all that apply.",
+    "explanation": "Costs are O(h); in-order is sorted; sorted inserts create a degenerate O(n) chain. Only a BALANCED tree guarantees O(log n).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Search, insert, and delete are all O(h) where h is the height"
+      },
+      {
+        "id": "b",
+        "text": "In-order traversal lists the keys in sorted order"
+      },
+      {
+        "id": "c",
+        "text": "Inserting sorted keys can degrade a plain BST to O(n) per operation"
+      },
+      {
+        "id": "d",
+        "text": "A plain BST always guarantees O(log n) operations"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l13-q4",
+    "topic": "trees-and-heaps",
+    "lesson": "tree-traversal-orders",
+    "type": "fill-blank",
+    "prompt": "An ______ traversal of a BST visits keys in ascending sorted order. (one word)",
+    "explanation": "In-order traversal (left, node, right) exploits the ordering property to emit keys in sorted sequence.",
+    "answer": [
+      "in-order",
+      "inorder"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l13-q5",
+    "topic": "trees-and-heaps",
+    "lesson": "bst-degeneration-to-linked-list",
+    "type": "ordering",
+    "prompt": "Order the steps of searching for a key in a BST.",
+    "explanation": "BST search follows one root-to-leaf path guided by comparisons, which is why it costs O(h).",
+    "items": [
+      {
+        "id": "start",
+        "text": "Start at the root"
+      },
+      {
+        "id": "compare",
+        "text": "Compare the key with the current node"
+      },
+      {
+        "id": "branch",
+        "text": "Go left if smaller, right if larger"
+      },
+      {
+        "id": "repeat",
+        "text": "Repeat until found or you reach an empty spot"
+      }
+    ],
+    "answer": [
+      "start",
+      "compare",
+      "branch",
+      "repeat"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l13-q6",
+    "topic": "trees-and-heaps",
+    "lesson": "bst-degeneration-to-linked-list",
+    "type": "match-pair",
+    "prompt": "Match each item with its complexity or meaning.",
+    "explanation": "Balance determines whether search is logarithmic or linear; in-order lists everything sorted; the successor is used in two-child deletion.",
+    "pairs": [
+      {
+        "left": "Search (balanced BST)",
+        "right": "O(log n)"
+      },
+      {
+        "left": "Search (degenerate BST)",
+        "right": "O(n)"
+      },
+      {
+        "left": "In-order traversal",
+        "right": "O(n), sorted output"
+      },
+      {
+        "left": "In-order successor",
+        "right": "Smallest key in the right subtree"
+      }
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l14-q1",
+    "topic": "trees-and-heaps",
+    "lesson": "tree-rotations-single-and-double",
+    "type": "single-choice",
+    "prompt": "What does a tree rotation preserve?",
+    "explanation": "A rotation restructures shape to rebalance while keeping the in-order sequence unchanged \u2014 that is why it is a valid BST operation.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The in-order (sorted) ordering of the keys"
+      },
+      {
+        "id": "b",
+        "text": "The exact height of every node"
+      },
+      {
+        "id": "c",
+        "text": "The color of every node"
+      },
+      {
+        "id": "d",
+        "text": "The number of leaves only"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "trees-and-heaps-l14-q2",
+    "topic": "trees-and-heaps",
+    "lesson": "avl-tree-balance-factor",
+    "type": "single-choice",
+    "prompt": "What height do self-balancing BSTs (AVL, red-black) guarantee?",
+    "explanation": "Balancing keeps the height logarithmic, so search, insert, and delete are guaranteed O(log n) regardless of insertion order.",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(log n)"
+      },
+      {
+        "id": "b",
+        "text": "O(n)"
+      },
+      {
+        "id": "c",
+        "text": "O(1)"
+      },
+      {
+        "id": "d",
+        "text": "O(sqrt(n))"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "trees-and-heaps-l14-q3",
+    "topic": "trees-and-heaps",
+    "lesson": "avl-rebalancing-four-cases",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "AVL is tighter (faster lookups); red-black is looser (fewer rotations, faster updates); both are O(log n). A plain BST does NOT self-balance.",
+    "options": [
+      {
+        "id": "a",
+        "text": "AVL trees are more strictly balanced than red-black trees"
+      },
+      {
+        "id": "b",
+        "text": "Red-black trees typically need fewer rotations per update"
+      },
+      {
+        "id": "c",
+        "text": "Both guarantee O(log n) search, insert, and delete"
+      },
+      {
+        "id": "d",
+        "text": "A plain BST guarantees O(log n) operations without balancing"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l14-q4",
+    "topic": "trees-and-heaps",
+    "lesson": "red-black-tree-invariants",
+    "type": "fill-blank",
+    "prompt": "The O(1) local restructuring that rebalances a BST while preserving key order is called a ______. (one word)",
+    "explanation": "Rotations rearrange a few nodes to reduce height without changing the in-order sequence.",
+    "answer": [
+      "rotation"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l14-q5",
+    "topic": "trees-and-heaps",
+    "lesson": "avl-vs-red-black-trees",
+    "type": "ordering",
+    "prompt": "Order the steps an AVL tree takes on insertion.",
+    "explanation": "AVL insertion first places the key, then walks back up updating heights, checking balance factors, and rotating where needed.",
+    "items": [
+      {
+        "id": "insert",
+        "text": "Insert the key as in an ordinary BST"
+      },
+      {
+        "id": "height",
+        "text": "Update heights along the path back to the root"
+      },
+      {
+        "id": "bf",
+        "text": "Compute the balance factor at each node"
+      },
+      {
+        "id": "rotate",
+        "text": "Rotate to rebalance any node that is out of balance"
+      }
+    ],
+    "answer": [
+      "insert",
+      "height",
+      "bf",
+      "rotate"
+    ]
+  },
+  {
+    "id": "trees-and-heaps-l14-q6",
+    "topic": "trees-and-heaps",
+    "lesson": "avl-vs-red-black-trees",
+    "type": "match-pair",
+    "prompt": "Match each item with its description.",
+    "explanation": "AVL enforces tight height balance; red-black uses colors for looser balance; rotations do the rebalancing; without balancing a BST can be linear.",
+    "pairs": [
+      {
+        "left": "AVL tree",
+        "right": "Balance factor kept within {-1, 0, +1}"
+      },
+      {
+        "left": "Red-black tree",
+        "right": "Color rules; fewer rotations per update"
+      },
+      {
+        "left": "Rotation",
+        "right": "O(1) rebalance preserving order"
+      },
+      {
+        "left": "Unbalanced BST",
+        "right": "O(n) worst-case operations"
+      }
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l15-q1",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "adjacency-matrix-vs-adjacency-list",
+    "type": "single-choice",
+    "prompt": "Which traversal finds the shortest path (fewest edges) in an unweighted graph?",
+    "explanation": "BFS visits vertices in order of distance from the source, so the first time it reaches a vertex is along a fewest-edges path.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Breadth-first search (BFS)"
+      },
+      {
+        "id": "b",
+        "text": "Depth-first search (DFS)"
+      },
+      {
+        "id": "c",
+        "text": "Either one works equally well"
+      },
+      {
+        "id": "d",
+        "text": "Neither \u2014 you need Dijkstra even for unweighted graphs"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l15-q2",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "breadth-first-search-bfs",
+    "type": "single-choice",
+    "prompt": "What is the time complexity of BFS or DFS using an adjacency list?",
+    "explanation": "Each vertex is dequeued/visited once and each edge is examined a constant number of times, giving O(V + E).",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(V + E)"
+      },
+      {
+        "id": "b",
+        "text": "O(V\u00b2)"
+      },
+      {
+        "id": "c",
+        "text": "O(E log V)"
+      },
+      {
+        "id": "d",
+        "text": "O(V \u00b7 E)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l15-q3",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "unweighted-shortest-paths-with-bfs",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "BFS is queue-based, DFS is stack/recursion-based, and adjacency lists are O(V+E). An adjacency matrix is O(V\u00b2), so (d) is false.",
+    "options": [
+      {
+        "id": "a",
+        "text": "BFS uses a FIFO queue"
+      },
+      {
+        "id": "b",
+        "text": "DFS uses a stack (or recursion)"
+      },
+      {
+        "id": "c",
+        "text": "An adjacency list uses O(V + E) space"
+      },
+      {
+        "id": "d",
+        "text": "An adjacency matrix uses O(V + E) space"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l15-q4",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "depth-first-search-dfs",
+    "type": "fill-blank",
+    "prompt": "To avoid revisiting nodes and looping forever on cycles, a graph traversal marks each node as ______. (one word)",
+    "explanation": "A visited set records explored vertices so the traversal terminates even when the graph has cycles.",
+    "answer": [
+      "visited"
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l15-q5",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "cycle-detection-and-connectivity",
+    "type": "ordering",
+    "prompt": "Order the steps of one BFS iteration (starting from an initialized queue).",
+    "explanation": "BFS repeatedly dequeues a node, processes it, and enqueues its unvisited neighbors (marking them visited on enqueue) until the queue drains.",
+    "items": [
+      {
+        "id": "dequeue",
+        "text": "Dequeue the next node from the front"
+      },
+      {
+        "id": "process",
+        "text": "Process (record) that node"
+      },
+      {
+        "id": "neighbors",
+        "text": "For each unvisited neighbor, mark it visited and enqueue it"
+      },
+      {
+        "id": "repeat",
+        "text": "Repeat until the queue is empty"
+      }
+    ],
+    "answer": [
+      "dequeue",
+      "process",
+      "neighbors",
+      "repeat"
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l15-q6",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "cycle-detection-and-connectivity",
+    "type": "match-pair",
+    "prompt": "Match each item with its property.",
+    "explanation": "BFS and DFS differ by frontier structure and use; the two representations trade space for edge-lookup speed.",
+    "pairs": [
+      {
+        "left": "BFS",
+        "right": "Queue; unweighted shortest paths"
+      },
+      {
+        "left": "DFS",
+        "right": "Stack/recursion; go deep first"
+      },
+      {
+        "left": "Adjacency list",
+        "right": "O(V + E) space; good for sparse graphs"
+      },
+      {
+        "left": "Adjacency matrix",
+        "right": "O(V\u00b2) space; O(1) edge lookup"
+      }
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l16-q1",
+    "topic": "sorting-algorithms",
+    "lesson": "comparison-sort-lower-bound",
+    "type": "single-choice",
+    "prompt": "What is the worst-case lower bound for any comparison-based sorting algorithm?",
+    "explanation": "A decision tree sorting n elements has n! leaves, so its height \u2014 the worst-case comparison count \u2014 is at least log\u2082(n!) = \u0398(n log n).",
+    "options": [
+      {
+        "id": "a",
+        "text": "\u03a9(n log n)"
+      },
+      {
+        "id": "b",
+        "text": "\u03a9(n)"
+      },
+      {
+        "id": "c",
+        "text": "\u03a9(n\u00b2)"
+      },
+      {
+        "id": "d",
+        "text": "\u03a9(log n)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l16-q2",
+    "topic": "sorting-algorithms",
+    "lesson": "counting-sort-algorithm",
+    "type": "single-choice",
+    "prompt": "What is counting sort's time complexity for n integers with keys in [0, k]?",
+    "explanation": "Counting sort tallies keys and places elements in O(n + k); it is efficient when k = O(n) and is stable.",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(n + k)"
+      },
+      {
+        "id": "b",
+        "text": "O(n log n)"
+      },
+      {
+        "id": "c",
+        "text": "O(n \u00b7 k)"
+      },
+      {
+        "id": "d",
+        "text": "O(k log n)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "sorting-algorithms-l16-q3",
+    "topic": "sorting-algorithms",
+    "lesson": "radix-sort-lsd-and-msd",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "Counting sort is stable, radix relies on per-digit stability, and these sorts index by key value rather than comparing. They need bounded integer keys, so (d) is false.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Counting sort is stable"
+      },
+      {
+        "id": "b",
+        "text": "Radix sort uses a stable sort on each digit"
+      },
+      {
+        "id": "c",
+        "text": "Non-comparison sorts beat \u03a9(n log n) by not comparing elements to each other"
+      },
+      {
+        "id": "d",
+        "text": "Counting sort works directly on arbitrary floating-point keys over any range"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l16-q4",
+    "topic": "sorting-algorithms",
+    "lesson": "bucket-sort-distribution",
+    "type": "fill-blank",
+    "prompt": "The worst-case lower bound for any comparison sort is \u03a9(n log ___). (fill the missing term)",
+    "explanation": "log\u2082(n!) = \u0398(n log n), so comparison sorts require \u03a9(n log n) comparisons in the worst case.",
+    "answer": [
+      "n"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l16-q5",
+    "topic": "sorting-algorithms",
+    "lesson": "when-to-use-non-comparison-sorts",
+    "type": "ordering",
+    "prompt": "Order the steps of counting sort.",
+    "explanation": "Count occurrences, turn them into cumulative positions, then place each element directly \u2014 no comparisons involved.",
+    "items": [
+      {
+        "id": "count",
+        "text": "Tally the number of occurrences of each key"
+      },
+      {
+        "id": "prefix",
+        "text": "Convert the counts to prefix sums (output positions)"
+      },
+      {
+        "id": "place",
+        "text": "Place each element into the output using its position"
+      }
+    ],
+    "answer": [
+      "count",
+      "prefix",
+      "place"
+    ]
+  },
+  {
+    "id": "sorting-algorithms-l16-q6",
+    "topic": "sorting-algorithms",
+    "lesson": "when-to-use-non-comparison-sorts",
+    "type": "match-pair",
+    "prompt": "Match each sort with its key fact.",
+    "explanation": "Each linear-time sort exploits key structure; comparison sorts are bounded below by \u03a9(n log n).",
+    "pairs": [
+      {
+        "left": "Counting sort",
+        "right": "O(n + k), integer keys in a small range"
+      },
+      {
+        "left": "Radix sort",
+        "right": "Stable pass per digit, O(d\u00b7(n + k))"
+      },
+      {
+        "left": "Bucket sort",
+        "right": "O(n) average for uniform keys"
+      },
+      {
+        "left": "Comparison lower bound",
+        "right": "\u03a9(n log n)"
+      }
+    ]
+  },
+  {
+    "id": "dynamic-programming-l17-q1",
+    "topic": "dynamic-programming",
+    "lesson": "optimal-substructure-explained",
+    "type": "single-choice",
+    "prompt": "Which pair of properties must a problem have for dynamic programming to apply?",
+    "explanation": "DP needs optimal substructure (build optimal from optimal subsolutions) and overlapping subproblems (so caching pays off).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Optimal substructure and overlapping subproblems"
+      },
+      {
+        "id": "b",
+        "text": "The greedy-choice property and a sorted input"
+      },
+      {
+        "id": "c",
+        "text": "Independent subproblems and a balanced recursion tree"
+      },
+      {
+        "id": "d",
+        "text": "Constant space and logarithmic depth"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "dynamic-programming-l17-q2",
+    "topic": "dynamic-programming",
+    "lesson": "overlapping-subproblems",
+    "type": "single-choice",
+    "prompt": "Memoization is best described as...",
+    "explanation": "Memoization keeps the natural recursion but stores results so each subproblem is solved once. Bottom-up table filling is tabulation.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Top-down recursion that caches each subproblem's result"
+      },
+      {
+        "id": "b",
+        "text": "Bottom-up iterative table filling"
+      },
+      {
+        "id": "c",
+        "text": "A greedy choice at each step"
+      },
+      {
+        "id": "d",
+        "text": "Dividing into independent subproblems"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "dynamic-programming-l17-q3",
+    "topic": "dynamic-programming",
+    "lesson": "memoization-top-down-dp",
+    "type": "multiple-choice",
+    "prompt": "Which statements about dynamic programming are true? Select all that apply.",
+    "explanation": "DP needs optimal substructure and overlapping subproblems, and memoization is top-down. The greedy-choice property is what greedy algorithms need, not DP.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It requires optimal substructure"
+      },
+      {
+        "id": "b",
+        "text": "It exploits overlapping subproblems by caching"
+      },
+      {
+        "id": "c",
+        "text": "Memoization is a top-down technique"
+      },
+      {
+        "id": "d",
+        "text": "DP requires the greedy-choice property"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "dynamic-programming-l17-q4",
+    "topic": "dynamic-programming",
+    "lesson": "tabulation-bottom-up-dp",
+    "type": "fill-blank",
+    "prompt": "The bottom-up dynamic-programming approach that fills a table iteratively is called ______. (one word)",
+    "explanation": "Tabulation computes subproblems from smallest to largest in a table, avoiding recursion.",
+    "answer": [
+      "tabulation"
+    ]
+  },
+  {
+    "id": "dynamic-programming-l17-q5",
+    "topic": "dynamic-programming",
+    "lesson": "knapsack-0-1-state-and-space-optimization",
+    "type": "ordering",
+    "prompt": "Order the steps of designing a dynamic-programming solution.",
+    "explanation": "Define what a subproblem is, relate it to smaller ones, pin down the base cases, then compute in an order that respects the dependencies.",
+    "items": [
+      {
+        "id": "state",
+        "text": "Define the subproblem (state)"
+      },
+      {
+        "id": "recur",
+        "text": "Write the recurrence relating it to smaller subproblems"
+      },
+      {
+        "id": "base",
+        "text": "Set the base cases"
+      },
+      {
+        "id": "fill",
+        "text": "Fill the table (or memoize) in dependency order"
+      }
+    ],
+    "answer": [
+      "state",
+      "recur",
+      "base",
+      "fill"
+    ]
+  },
+  {
+    "id": "dynamic-programming-l17-q6",
+    "topic": "dynamic-programming",
+    "lesson": "knapsack-0-1-state-and-space-optimization",
+    "type": "match-pair",
+    "prompt": "Match each term with its meaning.",
+    "explanation": "These four ideas define the DP toolkit: the two implementation styles and the two structural properties.",
+    "pairs": [
+      {
+        "left": "Memoization",
+        "right": "Top-down recursion with a cache"
+      },
+      {
+        "left": "Tabulation",
+        "right": "Bottom-up table filling"
+      },
+      {
+        "left": "Optimal substructure",
+        "right": "Optimal built from optimal subsolutions"
+      },
+      {
+        "left": "Overlapping subproblems",
+        "right": "The same subproblems recur"
+      }
+    ]
+  },
+  {
+    "id": "dynamic-programming-l18-q1",
+    "topic": "dynamic-programming",
+    "lesson": "longest-common-subsequence-lcs",
+    "type": "single-choice",
+    "prompt": "What is the time complexity of the standard LCS dynamic program for strings of length m and n?",
+    "explanation": "It fills an (m+1)\u00d7(n+1) table with O(1) work per cell, giving O(mn) time and space.",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(mn)"
+      },
+      {
+        "id": "b",
+        "text": "O(m + n)"
+      },
+      {
+        "id": "c",
+        "text": "O(2^n)"
+      },
+      {
+        "id": "d",
+        "text": "O(mn log n)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "dynamic-programming-l18-q2",
+    "topic": "dynamic-programming",
+    "lesson": "reconstructing-dp-solutions",
+    "type": "single-choice",
+    "prompt": "How does a subsequence differ from a substring?",
+    "explanation": "A subsequence keeps relative order but may skip elements; a substring is a contiguous run. LCS and LIS are about subsequences.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A subsequence preserves order but need not be contiguous"
+      },
+      {
+        "id": "b",
+        "text": "A subsequence must be contiguous; a substring need not be"
+      },
+      {
+        "id": "c",
+        "text": "They are the same thing"
+      },
+      {
+        "id": "d",
+        "text": "A subsequence must be sorted"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "dynamic-programming-l18-q3",
+    "topic": "dynamic-programming",
+    "lesson": "edit-distance-levenshtein",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "LCS and edit distance are O(mn); LIS has an O(n log n) method. LCS is about a (possibly non-contiguous) subsequence, not a substring.",
+    "options": [
+      {
+        "id": "a",
+        "text": "LCS runs in O(mn) time"
+      },
+      {
+        "id": "b",
+        "text": "Edit distance runs in O(mn) time"
+      },
+      {
+        "id": "c",
+        "text": "Longest increasing subsequence can be found in O(n log n)"
+      },
+      {
+        "id": "d",
+        "text": "LCS finds the longest contiguous common substring"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "dynamic-programming-l18-q4",
+    "topic": "dynamic-programming",
+    "lesson": "longest-increasing-subsequence-lis",
+    "type": "fill-blank",
+    "prompt": "The minimum number of single-character insertions, deletions, and substitutions to turn one string into another is the ______ distance. (Levenshtein or the common one-word name)",
+    "explanation": "This is the edit (Levenshtein) distance, computed by an O(mn) DP.",
+    "answer": [
+      "edit",
+      "levenshtein"
+    ]
+  },
+  {
+    "id": "dynamic-programming-l18-q5",
+    "topic": "dynamic-programming",
+    "lesson": "coin-change-fewest-coins",
+    "type": "ordering",
+    "prompt": "Order the steps to solve LCS with a bottom-up table.",
+    "explanation": "Allocate the table, set the empty-prefix base cases, fill in dependency order, and read the bottom-right cell.",
+    "items": [
+      {
+        "id": "table",
+        "text": "Create an (m+1)\u00d7(n+1) table"
+      },
+      {
+        "id": "base",
+        "text": "Initialize the empty-prefix row and column to 0"
+      },
+      {
+        "id": "fill",
+        "text": "Fill each cell from the recurrence"
+      },
+      {
+        "id": "read",
+        "text": "Read the answer from dp[m][n]"
+      }
+    ],
+    "answer": [
+      "table",
+      "base",
+      "fill",
+      "read"
+    ]
+  },
+  {
+    "id": "dynamic-programming-l18-q6",
+    "topic": "dynamic-programming",
+    "lesson": "coin-change-fewest-coins",
+    "type": "match-pair",
+    "prompt": "Match each problem with its description or complexity.",
+    "explanation": "These sequence problems share a prefix-indexed DP shape; a subsequence is the order-preserving, gap-allowing selection they operate on.",
+    "pairs": [
+      {
+        "left": "LCS",
+        "right": "Longest common subsequence, O(mn)"
+      },
+      {
+        "left": "Edit distance",
+        "right": "Fewest insert/delete/substitute edits, O(mn)"
+      },
+      {
+        "left": "LIS",
+        "right": "Longest increasing subsequence, O(n\u00b2) or O(n log n)"
+      },
+      {
+        "left": "Subsequence",
+        "right": "Order-preserving, not necessarily contiguous"
+      }
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l19-q1",
+    "topic": "greedy-and-backtracking",
+    "lesson": "greedy-choice-property",
+    "type": "single-choice",
+    "prompt": "In the greedy activity-selection algorithm, activities are sorted by...",
+    "explanation": "Choosing the activity that finishes earliest leaves the most room for the rest \u2014 the greedy choice that is provably optimal here.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Earliest finish time"
+      },
+      {
+        "id": "b",
+        "text": "Earliest start time"
+      },
+      {
+        "id": "c",
+        "text": "Shortest duration"
+      },
+      {
+        "id": "d",
+        "text": "Latest finish time"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "greedy-and-backtracking-l19-q2",
+    "topic": "greedy-and-backtracking",
+    "lesson": "activity-selection-problem",
+    "type": "single-choice",
+    "prompt": "Which property must hold for a greedy algorithm to yield a globally optimal solution?",
+    "explanation": "The greedy-choice property says a globally optimal solution is reachable by making locally optimal choices; it must be proved for each problem.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The greedy-choice property"
+      },
+      {
+        "id": "b",
+        "text": "Overlapping subproblems"
+      },
+      {
+        "id": "c",
+        "text": "A sorted input in all cases"
+      },
+      {
+        "id": "d",
+        "text": "A balanced recursion tree"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "greedy-and-backtracking-l19-q3",
+    "topic": "greedy-and-backtracking",
+    "lesson": "fractional-knapsack-greedy",
+    "type": "multiple-choice",
+    "prompt": "Which statements about greedy algorithms are true? Select all that apply.",
+    "explanation": "Greedy commits to local optima; activity selection and Huffman are optimal greedy algorithms. Greedy is NOT optimal for 0/1 knapsack \u2014 that needs DP.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They make a locally optimal choice at each step and don't backtrack"
+      },
+      {
+        "id": "b",
+        "text": "Activity selection by finish time is optimal"
+      },
+      {
+        "id": "c",
+        "text": "Huffman coding is a greedy algorithm"
+      },
+      {
+        "id": "d",
+        "text": "Greedy by value/weight ratio solves 0/1 knapsack optimally"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l19-q4",
+    "topic": "greedy-and-backtracking",
+    "lesson": "huffman-coding-compression",
+    "type": "fill-blank",
+    "prompt": "A greedy algorithm makes the ______ optimal choice at each step. (one word)",
+    "explanation": "It optimizes the immediate choice, trusting (when the greedy-choice property holds) that this leads to a global optimum.",
+    "answer": [
+      "locally"
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l19-q5",
+    "topic": "greedy-and-backtracking",
+    "lesson": "when-greedy-fails-vs-dp",
+    "type": "ordering",
+    "prompt": "Order the steps of the greedy activity-selection algorithm.",
+    "explanation": "Sort by finish, take the earliest-finishing activity, then repeatedly take the next one that starts after the last chosen finishes.",
+    "items": [
+      {
+        "id": "sort",
+        "text": "Sort activities by finish time"
+      },
+      {
+        "id": "first",
+        "text": "Select the first activity (earliest finish)"
+      },
+      {
+        "id": "skip",
+        "text": "Skip activities that overlap the last chosen one"
+      },
+      {
+        "id": "next",
+        "text": "Select the next compatible activity, and repeat"
+      }
+    ],
+    "answer": [
+      "sort",
+      "first",
+      "skip",
+      "next"
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l19-q6",
+    "topic": "greedy-and-backtracking",
+    "lesson": "when-greedy-fails-vs-dp",
+    "type": "match-pair",
+    "prompt": "Match each problem with its greedy fact.",
+    "explanation": "Three of these are solved optimally by greedy; 0/1 knapsack is the classic case where greedy fails and dynamic programming is required.",
+    "pairs": [
+      {
+        "left": "Activity selection",
+        "right": "Sort by finish time \u2014 optimal"
+      },
+      {
+        "left": "Huffman coding",
+        "right": "Merge the two lowest frequencies"
+      },
+      {
+        "left": "Fractional knapsack",
+        "right": "Greedy by value/weight \u2014 optimal"
+      },
+      {
+        "left": "0/1 knapsack",
+        "right": "Greedy fails \u2014 use DP"
+      }
+    ]
+  },
+  {
+    "id": "graph-optimization-l20-q1",
+    "topic": "graph-optimization",
+    "lesson": "single-source-shortest-paths-problem",
+    "type": "single-choice",
+    "prompt": "What precondition must hold for Dijkstra's algorithm to be correct?",
+    "explanation": "Dijkstra finalizes a vertex's distance when first extracted; a negative edge could later offer a cheaper route, which it would never revisit.",
+    "options": [
+      {
+        "id": "a",
+        "text": "All edge weights are non-negative"
+      },
+      {
+        "id": "b",
+        "text": "The graph is a tree"
+      },
+      {
+        "id": "c",
+        "text": "The graph is unweighted"
+      },
+      {
+        "id": "d",
+        "text": "There are no more than V edges"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-optimization-l20-q2",
+    "topic": "graph-optimization",
+    "lesson": "dijkstras-algorithm-with-min-heap",
+    "type": "single-choice",
+    "prompt": "Which algorithm can detect a negative-weight cycle?",
+    "explanation": "After V-1 relaxation rounds, if any edge can still be relaxed, Bellman-Ford has detected a reachable negative cycle.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bellman-Ford"
+      },
+      {
+        "id": "b",
+        "text": "Dijkstra"
+      },
+      {
+        "id": "c",
+        "text": "Breadth-first search"
+      },
+      {
+        "id": "d",
+        "text": "Binary search"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-optimization-l20-q3",
+    "topic": "graph-optimization",
+    "lesson": "why-dijkstra-fails-on-negative-weights",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "explanation": "Dijkstra is a greedy, heap-based, non-negative-weight algorithm; Bellman-Ford is O(V\u00b7E). Dijkstra does NOT handle negative edges.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dijkstra is greedy and uses a priority queue"
+      },
+      {
+        "id": "b",
+        "text": "Dijkstra requires non-negative edge weights"
+      },
+      {
+        "id": "c",
+        "text": "Bellman-Ford runs in O(V\u00b7E) time"
+      },
+      {
+        "id": "d",
+        "text": "Dijkstra correctly handles negative edge weights"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "graph-optimization-l20-q4",
+    "topic": "graph-optimization",
+    "lesson": "bellman-ford-algorithm",
+    "type": "fill-blank",
+    "prompt": "The operation that updates dist[v] to dist[u] + w when a shorter path via u is found is called ______. (one word)",
+    "explanation": "Relaxation is the shared core of both algorithms; they differ only in the order and number of relaxations.",
+    "answer": [
+      "relaxation",
+      "relax",
+      "relaxing"
+    ]
+  },
+  {
+    "id": "graph-optimization-l20-q5",
+    "topic": "graph-optimization",
+    "lesson": "negative-cycle-detection",
+    "type": "ordering",
+    "prompt": "Order the main steps of Dijkstra's algorithm.",
+    "explanation": "Initialize distances, seed the heap with the source, then repeatedly extract the nearest vertex and relax its edges.",
+    "items": [
+      {
+        "id": "init",
+        "text": "Set dist[source] = 0 and all others to infinity"
+      },
+      {
+        "id": "push",
+        "text": "Push the source into a min-priority queue"
+      },
+      {
+        "id": "extract",
+        "text": "Extract the closest unfinalized vertex"
+      },
+      {
+        "id": "relax",
+        "text": "Relax its outgoing edges and repeat"
+      }
+    ],
+    "answer": [
+      "init",
+      "push",
+      "extract",
+      "relax"
+    ]
+  },
+  {
+    "id": "graph-optimization-l20-q6",
+    "topic": "graph-optimization",
+    "lesson": "negative-cycle-detection",
+    "type": "match-pair",
+    "prompt": "Match each item with its description.",
+    "explanation": "Dijkstra is fast but restricted; Bellman-Ford is general; relaxation is shared; a negative cycle removes any well-defined shortest path.",
+    "pairs": [
+      {
+        "left": "Dijkstra",
+        "right": "Non-negative weights, O(E log V)"
+      },
+      {
+        "left": "Bellman-Ford",
+        "right": "Negative edges, O(V\u00b7E), cycle detection"
+      },
+      {
+        "left": "Relaxation",
+        "right": "Improve dist[v] via an edge"
+      },
+      {
+        "left": "Negative cycle",
+        "right": "Shortest paths become undefined"
+      }
+    ]
+  },
+  {
+    "id": "graph-optimization-l21-q1",
+    "topic": "graph-optimization",
+    "lesson": "minimum-spanning-tree-properties",
+    "type": "single-choice",
+    "prompt": "What does a minimum spanning tree minimize?",
+    "explanation": "An MST connects all vertices with the least total edge weight (V-1 edges, no cycles). Minimizing per-source distances is the shortest-path problem instead.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The total weight of edges needed to connect all vertices"
+      },
+      {
+        "id": "b",
+        "text": "The distance between a chosen source and every other vertex"
+      },
+      {
+        "id": "c",
+        "text": "The number of vertices in the graph"
+      },
+      {
+        "id": "d",
+        "text": "The maximum edge weight only"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-optimization-l21-q2",
+    "topic": "graph-optimization",
+    "lesson": "kruskals-algorithm-with-union-find",
+    "type": "single-choice",
+    "prompt": "Which data structure does Kruskal's algorithm use to detect cycles efficiently?",
+    "explanation": "Union-find tells Kruskal in near-constant time whether an edge's endpoints are already connected (which would create a cycle).",
+    "options": [
+      {
+        "id": "a",
+        "text": "Union-find (disjoint sets)"
+      },
+      {
+        "id": "b",
+        "text": "A min-heap"
+      },
+      {
+        "id": "c",
+        "text": "A hash table of edges"
+      },
+      {
+        "id": "d",
+        "text": "A stack"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-optimization-l21-q3",
+    "topic": "graph-optimization",
+    "lesson": "prims-algorithm-vertex-expansion",
+    "type": "multiple-choice",
+    "prompt": "Which statements about MST algorithms are true? Select all that apply.",
+    "explanation": "An MST has V-1 edges; Kruskal is edge-sorting + union-find; Prim is heap-based tree growth. An MST is NOT the same as shortest paths.",
+    "options": [
+      {
+        "id": "a",
+        "text": "An MST of a connected graph has exactly V-1 edges"
+      },
+      {
+        "id": "b",
+        "text": "Kruskal sorts edges by weight and uses union-find"
+      },
+      {
+        "id": "c",
+        "text": "Prim grows a single tree using a min-heap"
+      },
+      {
+        "id": "d",
+        "text": "An MST is identical to the shortest paths from a source vertex"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "graph-optimization-l21-q4",
+    "topic": "graph-optimization",
+    "lesson": "kruskal-vs-prim-comparison",
+    "type": "fill-blank",
+    "prompt": "The ______ property states that the minimum-weight edge crossing any partition of the vertices belongs to some MST. (one word)",
+    "explanation": "The cut property is the greedy justification behind both Kruskal and Prim.",
+    "answer": [
+      "cut"
+    ]
+  },
+  {
+    "id": "graph-optimization-l21-q5",
+    "topic": "graph-optimization",
+    "lesson": "mst-vs-shortest-paths-differences",
+    "type": "ordering",
+    "prompt": "Order the steps of Kruskal's algorithm.",
+    "explanation": "Kruskal sorts edges, then greedily adds the lightest edges that don't form a cycle until the tree has V-1 edges.",
+    "items": [
+      {
+        "id": "sort",
+        "text": "Sort all edges by weight (ascending)"
+      },
+      {
+        "id": "consider",
+        "text": "Consider edges from lightest to heaviest"
+      },
+      {
+        "id": "add",
+        "text": "Add an edge only if it connects two different components"
+      },
+      {
+        "id": "stop",
+        "text": "Stop once V-1 edges have been added"
+      }
+    ],
+    "answer": [
+      "sort",
+      "consider",
+      "add",
+      "stop"
+    ]
+  },
+  {
+    "id": "graph-optimization-l21-q6",
+    "topic": "graph-optimization",
+    "lesson": "mst-vs-shortest-paths-differences",
+    "type": "match-pair",
+    "prompt": "Match each item with its description.",
+    "explanation": "The two greedy algorithms apply the cut property differently to build a spanning tree of minimum total weight.",
+    "pairs": [
+      {
+        "left": "Kruskal",
+        "right": "Sort edges + union-find cycle check"
+      },
+      {
+        "left": "Prim",
+        "right": "Grow one tree with a min-heap"
+      },
+      {
+        "left": "Cut property",
+        "right": "Lightest crossing edge is in an MST"
+      },
+      {
+        "left": "Spanning tree",
+        "right": "V-1 edges, connects all, no cycle"
+      }
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l22-q1",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "disjoint-set-union-find-structure",
+    "type": "single-choice",
+    "prompt": "What are the two core operations of a union-find structure?",
+    "explanation": "Union-find supports find(x), which returns the representative of x's set, and union(x, y), which merges two sets.",
+    "options": [
+      {
+        "id": "a",
+        "text": "find (return a set's representative) and union (merge two sets)"
+      },
+      {
+        "id": "a2",
+        "text": "push and pop"
+      },
+      {
+        "id": "c",
+        "text": "insert and delete"
+      },
+      {
+        "id": "d",
+        "text": "enqueue and dequeue"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l22-q2",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "find-with-path-compression",
+    "type": "single-choice",
+    "prompt": "With both union by rank and path compression, what is the amortized cost per operation?",
+    "explanation": "The inverse Ackermann function \u03b1 grows so slowly that it is at most about 4 for any practical n, making operations effectively O(1) amortized.",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(\u03b1(n)) \u2014 effectively constant (\u03b1(n) \u2264 4 in practice)"
+      },
+      {
+        "id": "b",
+        "text": "O(n)"
+      },
+      {
+        "id": "c",
+        "text": "O(log n) and no better"
+      },
+      {
+        "id": "d",
+        "text": "O(n log n)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l22-q3",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "union-by-rank-and-size",
+    "type": "multiple-choice",
+    "prompt": "Which statements about union-find are true? Select all that apply.",
+    "explanation": "find gives the root, union-by-rank limits height, and path compression flattens. Without optimizations, a naive forest can degrade to O(n), so (d) is false.",
+    "options": [
+      {
+        "id": "a",
+        "text": "find returns the representative (root) of an element's set"
+      },
+      {
+        "id": "b",
+        "text": "Union by rank keeps the trees shallow"
+      },
+      {
+        "id": "c",
+        "text": "Path compression flattens the tree during find"
+      },
+      {
+        "id": "d",
+        "text": "Without any optimizations, operations are guaranteed O(1)"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l22-q4",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "inverse-ackermann-complexity",
+    "type": "fill-blank",
+    "prompt": "The optimization that makes nodes point directly to the root during find is called path ______. (one word)",
+    "explanation": "Path compression rewires nodes along the find path straight to the root, speeding up future finds.",
+    "answer": [
+      "compression"
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l22-q5",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "cycle-detection-with-union-find",
+    "type": "ordering",
+    "prompt": "Order the steps of a union(x, y) operation with union by rank.",
+    "explanation": "Union finds both roots, does nothing if they already match, and otherwise links by rank to keep the merged tree shallow.",
+    "items": [
+      {
+        "id": "fx",
+        "text": "Find the root of x"
+      },
+      {
+        "id": "fy",
+        "text": "Find the root of y"
+      },
+      {
+        "id": "check",
+        "text": "If the roots are the same, stop (already merged)"
+      },
+      {
+        "id": "link",
+        "text": "Otherwise attach the shorter tree's root under the taller's"
+      }
+    ],
+    "answer": [
+      "fx",
+      "fy",
+      "check",
+      "link"
+    ]
+  },
+  {
+    "id": "graph-traversals-and-connectivity-l22-q6",
+    "topic": "graph-traversals-and-connectivity",
+    "lesson": "cycle-detection-with-union-find",
+    "type": "match-pair",
+    "prompt": "Match each term with its meaning.",
+    "explanation": "The two operations plus the two optimizations are the entire union-find toolkit.",
+    "pairs": [
+      {
+        "left": "find",
+        "right": "Return an element's set representative"
+      },
+      {
+        "left": "union",
+        "right": "Merge two sets"
+      },
+      {
+        "left": "Union by rank",
+        "right": "Attach the smaller tree under the larger"
+      },
+      {
+        "left": "Path compression",
+        "right": "Flatten the tree during find"
+      }
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l23-q1",
+    "topic": "greedy-and-backtracking",
+    "lesson": "backtracking-search-state-space",
+    "type": "single-choice",
+    "prompt": "When does backtracking abandon (prune) a partial solution?",
+    "explanation": "Backtracking prunes a branch the moment a partial candidate violates a constraint, avoiding the exponential work of exploring it fully.",
+    "options": [
+      {
+        "id": "a",
+        "text": "As soon as it cannot possibly lead to a valid complete solution"
+      },
+      {
+        "id": "b",
+        "text": "Only after building every complete candidate"
+      },
+      {
+        "id": "c",
+        "text": "Never \u2014 it explores the entire search space"
+      },
+      {
+        "id": "d",
+        "text": "Randomly, to save time"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "greedy-and-backtracking-l23-q2",
+    "topic": "greedy-and-backtracking",
+    "lesson": "generate-subsets-and-combinations",
+    "type": "single-choice",
+    "prompt": "What is the size of the search space when generating all subsets of n elements?",
+    "explanation": "Each element is independently in or out of a subset, giving 2\u207f subsets. (Permutations, by contrast, number n!.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(2\u207f)"
+      },
+      {
+        "id": "b",
+        "text": "O(n\u00b2)"
+      },
+      {
+        "id": "c",
+        "text": "O(n log n)"
+      },
+      {
+        "id": "d",
+        "text": "O(n!)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "greedy-and-backtracking-l23-q3",
+    "topic": "greedy-and-backtracking",
+    "lesson": "generate-permutations",
+    "type": "multiple-choice",
+    "prompt": "Which statements about backtracking are true? Select all that apply.",
+    "explanation": "Backtracking is incremental, prunes early, and follows choose/explore/un-choose. Its worst case is exponential, so (d) is false.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It builds solutions incrementally, one choice at a time"
+      },
+      {
+        "id": "b",
+        "text": "Pruning invalid branches early is what makes it practical"
+      },
+      {
+        "id": "c",
+        "text": "It explores via recursion and undoes each choice (un-choose)"
+      },
+      {
+        "id": "d",
+        "text": "It guarantees polynomial-time performance"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l23-q4",
+    "topic": "greedy-and-backtracking",
+    "lesson": "n-queens-placement-and-pruning",
+    "type": "fill-blank",
+    "prompt": "Abandoning a partial candidate that cannot lead to a valid solution is called ______. (one word)",
+    "explanation": "Pruning cuts off branches of the search tree that violate constraints, which is what keeps an exponential search tractable.",
+    "answer": [
+      "pruning"
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l23-q5",
+    "topic": "greedy-and-backtracking",
+    "lesson": "state-restoration-the-unchoose-step",
+    "type": "ordering",
+    "prompt": "Order the steps of the backtracking template for one choice.",
+    "explanation": "For each option you choose it, explore recursively, undo it to restore state, then move on to the next option.",
+    "items": [
+      {
+        "id": "choose",
+        "text": "Apply a valid choice (choose)"
+      },
+      {
+        "id": "explore",
+        "text": "Recurse to explore that choice"
+      },
+      {
+        "id": "unchoose",
+        "text": "Undo the choice (un-choose / backtrack)"
+      },
+      {
+        "id": "next",
+        "text": "Try the next valid choice"
+      }
+    ],
+    "answer": [
+      "choose",
+      "explore",
+      "unchoose",
+      "next"
+    ]
+  },
+  {
+    "id": "greedy-and-backtracking-l23-q6",
+    "topic": "greedy-and-backtracking",
+    "lesson": "state-restoration-the-unchoose-step",
+    "type": "match-pair",
+    "prompt": "Match each item with its fact.",
+    "explanation": "The combinatorial sizes are exponential; N-Queens is the classic pruned search; the template ties it all together.",
+    "pairs": [
+      {
+        "left": "All subsets",
+        "right": "O(2\u207f) candidates"
+      },
+      {
+        "left": "All permutations",
+        "right": "O(n!) candidates"
+      },
+      {
+        "left": "N-Queens",
+        "right": "Place one queen per row, prune attacks"
+      },
+      {
+        "left": "Backtracking template",
+        "right": "choose \u2192 explore \u2192 un-choose"
+      }
+    ]
+  },
+  {
+    "id": "string-matching-l24-q1",
+    "topic": "string-matching",
+    "lesson": "naive-string-matching-scan",
+    "type": "single-choice",
+    "prompt": "What is the total running time of the KMP string-matching algorithm on a text of length n and pattern of length m?",
+    "explanation": "KMP scans the text once (the text pointer never moves backward) after O(m) preprocessing, giving O(n + m) total.",
+    "options": [
+      {
+        "id": "a",
+        "text": "O(n + m)"
+      },
+      {
+        "id": "b",
+        "text": "O(nm)"
+      },
+      {
+        "id": "c",
+        "text": "O(n log m)"
+      },
+      {
+        "id": "d",
+        "text": "O(m\u00b2)"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "string-matching-l24-q2",
+    "topic": "string-matching",
+    "lesson": "kmp-prefix-function-pi-array",
+    "type": "single-choice",
+    "prompt": "What does the prefix (failure) function of a pattern store for each prefix?",
+    "explanation": "The prefix function captures the pattern's internal repetition \u2014 the longest proper prefix that is also a suffix \u2014 enabling the fallback on a mismatch.",
+    "options": [
+      {
+        "id": "a",
+        "text": "The length of the longest proper prefix that is also a suffix"
+      },
+      {
+        "id": "b",
+        "text": "The number of distinct characters in the prefix"
+      },
+      {
+        "id": "c",
+        "text": "The index of the pattern in the text"
+      },
+      {
+        "id": "d",
+        "text": "A hash of the prefix"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "string-matching-l24-q3",
+    "topic": "string-matching",
+    "lesson": "kmp-search-linear-time-matching",
+    "type": "multiple-choice",
+    "prompt": "Which statements about string matching are true? Select all that apply.",
+    "explanation": "Naive is O(nm) worst case, KMP is linear and never rescans the text. Naive is not always faster \u2014 it can be far slower on repetitive input.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Naive matching is O(nm) in the worst case"
+      },
+      {
+        "id": "b",
+        "text": "KMP runs in O(n + m)"
+      },
+      {
+        "id": "c",
+        "text": "KMP never moves the text pointer backward"
+      },
+      {
+        "id": "d",
+        "text": "Naive matching is always faster than KMP"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "string-matching-l24-q4",
+    "topic": "string-matching",
+    "lesson": "rabin-karp-rolling-hash",
+    "type": "fill-blank",
+    "prompt": "KMP precomputes the ______ function (also called the failure function) of the pattern. (one word)",
+    "explanation": "The prefix function tells KMP how far to fall back within the pattern on a mismatch without re-reading text.",
+    "answer": [
+      "prefix"
+    ]
+  },
+  {
+    "id": "string-matching-l24-q5",
+    "topic": "string-matching",
+    "lesson": "string-matching-algorithm-selection",
+    "type": "ordering",
+    "prompt": "Order the steps of the KMP algorithm.",
+    "explanation": "KMP preprocesses the pattern, then scans the text once, using the prefix function to fall back within the pattern instead of rescanning the text.",
+    "items": [
+      {
+        "id": "build",
+        "text": "Compute the prefix function of the pattern"
+      },
+      {
+        "id": "scan",
+        "text": "Scan the text left to right, advancing the pattern pointer on matches"
+      },
+      {
+        "id": "fallback",
+        "text": "On a mismatch, fall back the pattern pointer via the prefix function (text pointer stays)"
+      },
+      {
+        "id": "report",
+        "text": "Report a match when the whole pattern is matched"
+      }
+    ],
+    "answer": [
+      "build",
+      "scan",
+      "fallback",
+      "report"
+    ]
+  },
+  {
+    "id": "string-matching-l24-q6",
+    "topic": "string-matching",
+    "lesson": "string-matching-algorithm-selection",
+    "type": "match-pair",
+    "prompt": "Match each algorithm/term with its fact.",
+    "explanation": "Each matcher trades preprocessing for search speed; the prefix function is the structure that powers KMP.",
+    "pairs": [
+      {
+        "left": "Naive matching",
+        "right": "O(nm) worst case"
+      },
+      {
+        "left": "KMP",
+        "right": "O(n + m) using the prefix function"
+      },
+      {
+        "left": "Rabin-Karp",
+        "right": "Rolling hash; multi-pattern search"
+      },
+      {
+        "left": "Prefix function",
+        "right": "Longest proper prefix that is also a suffix"
+      }
+    ]
+  },
+  {
+    "id": "string-matching-extra-q1",
+    "topic": "string-matching",
+    "lesson": "rabin-karp-rolling-hash",
+    "type": "single-choice",
+    "prompt": "What must a Rabin-Karp matcher do when a sliding window's rolling hash matches the pattern's hash?",
+    "explanation": "Because different substrings can produce identical hash values modulo M (a collision / spurious hit), Rabin-Karp must confirm every candidate match with a character-by-character comparison.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verify the match with a character-by-character comparison to rule out hash collisions"
+      },
+      {
+        "id": "b",
+        "text": "Output the match immediately because modular hashes never collide on natural language"
+      },
+      {
+        "id": "c",
+        "text": "Double the modulus prime M and rehash the entire text from scratch"
+      },
+      {
+        "id": "d",
+        "text": "Rewind the text pointer by m characters and restart the search"
+      }
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "string-matching-extra-q2",
+    "topic": "string-matching",
+    "lesson": "kmp-search-linear-time-matching",
+    "type": "single-choice",
+    "prompt": "Why is Knuth-Morris-Pratt (KMP) preferred over Boyer-Moore when processing unbuffered network packet streams?",
+    "explanation": "KMP's text pointer moves strictly forward from 0 to n-1 without ever decrementing or rewinding, making it ideal for streaming data where input characters cannot be buffered or rewound.",
+    "options": [
+      {
+        "id": "a",
+        "text": "KMP never backtracks or rewinds the text pointer, processing stream tokens strictly online"
+      },
+      {
+        "id": "b",
+        "text": "KMP achieves sublinear average-case runtime by skipping characters"
+      },
+      {
+        "id": "c",
+        "text": "KMP requires zero preprocessing time or memory"
+      },
+      {
+        "id": "d",
+        "text": "KMP searches arbitrary regular expressions without finite automata"
+      }
+    ],
+    "answer": "a"
+  }
+]

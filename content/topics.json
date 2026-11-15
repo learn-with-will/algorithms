@@ -1,0 +1,68 @@
+[
+  {
+    "id": "algorithmic-foundations",
+    "title": "Algorithmic Foundations",
+    "blurb": "Master Knuth's criteria, loop invariants, asymptotic Big-O/Omega/Theta notation, and amortized complexity.",
+    "order": 1
+  },
+  {
+    "id": "linear-data-structures",
+    "title": "Linear Data Structures",
+    "blurb": "Understand contiguous arrays, dynamic resizing, singly and doubly linked lists, and circular buffers.",
+    "order": 2
+  },
+  {
+    "id": "stacks-queues-and-hash-tables",
+    "title": "Stacks, Queues & Hash Tables",
+    "blurb": "Explore LIFO/FIFO mechanics, monotonic stacks, collision resolution, open addressing, and load factor rehashing.",
+    "order": 3
+  },
+  {
+    "id": "recursion-and-searching",
+    "title": "Recursion & Searching",
+    "blurb": "Analyze call stack execution, recurrence relations, binary search invariants, and bisect search on answer spaces.",
+    "order": 4
+  },
+  {
+    "id": "sorting-algorithms",
+    "title": "Sorting Algorithms",
+    "blurb": "Master quadratic sorts, divide-and-conquer mergesort, randomized quicksort, and non-comparison linear sorts.",
+    "order": 5
+  },
+  {
+    "id": "trees-and-heaps",
+    "title": "Trees & Heaps",
+    "blurb": "Binary search tree invariants, AVL tree rebalancing, binary heap properties, and priority queue mechanics.",
+    "order": 6
+  },
+  {
+    "id": "graph-traversals-and-connectivity",
+    "title": "Graph Traversals & Connectivity",
+    "blurb": "Graph representations, BFS and DFS traversals, topological sorting, DAG detection, and Disjoint Set Union.",
+    "order": 7
+  },
+  {
+    "id": "graph-optimization",
+    "title": "Graph Optimization",
+    "blurb": "Shortest paths with Dijkstra and Bellman-Ford, Minimum Spanning Trees with Kruskal and Prim, and cut properties.",
+    "order": 8
+  },
+  {
+    "id": "dynamic-programming",
+    "title": "Dynamic Programming",
+    "blurb": "Memoization vs tabulation, subproblem DAGs, classic 1D/2D DP problems, and space optimization techniques.",
+    "order": 9
+  },
+  {
+    "id": "greedy-and-backtracking",
+    "title": "Greedy & Backtracking",
+    "blurb": "Greedy-choice properties, interval scheduling, state space tree exploration, pruning, and state restoration.",
+    "order": 10
+  },
+  {
+    "id": "string-matching",
+    "title": "String Matching",
+    "blurb": "Naive string scanning, KMP linear-time prefix matching, Rabin-Karp rolling hashes, and algorithm selection.",
+    "order": 11
+  }
+]

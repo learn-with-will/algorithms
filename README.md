@@ -1,181 +1,55 @@
-# Algorithms Learning Portal
+# Algorithms Learn
 
-A **frontend-only** algorithms & data structures course: read Markdown lessons,
-take quizzes, and track your progress — all in the browser, no backend required.
-The course takes you from Big-O analysis and the core data structures to sorting,
-graph algorithms, dynamic programming, and string matching.
+The content of the Algorithms course at <https://learn-with-will.github.io/algorithms/>: 121 short lessons
+("bites") in 11 topics, each teaching one idea in 3–5 minutes, plus a bank of 146 quiz
+questions. It covers fundamental data structures, asymptotic Big-O analysis, sorting
+algorithms, binary search trees and heaps, graph traversals and shortest paths,
+minimum spanning trees, dynamic programming, greedy heuristics, backtracking, and string matching.
 
-The portal shell is built with React 19, Vite, TypeScript, React Router,
-Tailwind CSS v4, marked, and PrismJS. The **content** it renders is a complete
-24-lesson curriculum with all implementations in **Python 3**. Every complexity
-claim, correctness argument, and code example is verified against authoritative
-sources (see [Accuracy](#accuracy)).
-
-## Features
-
-- **Roadmap** of lessons grouped by level (beginner / intermediate / advanced).
-- **Lesson reader** with Markdown rendering, Prism syntax highlighting, a table of
-  contents, previous/next navigation, mark-complete, and bookmarking.
-- **Quizzes** supporting five question types: single-choice, multiple-choice,
-  fill-blank, ordering, and match-pair — with grading, review mode, and explanations.
-- **Dashboard** with completion stats, per-level progress, and quiz history.
-- **Search** and **bookmarks** pages.
-- **Dark mode** with persistence, and a responsive layout.
-- All progress persists to `localStorage` (under course-unique keys).
-
-## Run it
-
-```bash
-npm install
-npm run dev        # dev server (Vite) at http://localhost:5173
-npm run build      # production build into dist/
-npm run preview    # serve the production build locally
-```
-
-## Project structure
+This repository holds **content only**. The site itself (lesson reader, quizzes, progress,
+optional sign-in) is the shared [course shell](https://github.com/learn-with-will/course-shell),
+which every course uses.
 
 ```text
-src/
-├── core/
-│   ├── models/        # Lesson, Quiz, Progress types + constants
-│   ├── services/      # lesson/quiz loading, search, grading, asset URLs
-│   ├── context/       # Course, Progress, Theme providers (React state)
-│   └── hooks/         # useDocumentTitle, prism setup
-├── shared/components/ # Navbar, Sidebar, Footer, LessonCard, TableOfContents,
-│                      # LessonNavigation, LessonContent, QuizQuestion,
-│                      # QuizProgress, QuizResult, AlgorithmsLogo, ScrollManager
-├── features/          # home, roadmap, lesson, quiz, dashboard, search, bookmarks
-├── App.tsx            # layout + lazy-loaded routes
-└── main.tsx           # providers + bootstrap
-
-public/
-├── content/           # lesson Markdown + course-manifest.json
-└── quizzes/           # one <lessonId>.json per quiz
+course.json              name, brand colours, home page copy, code languages
+content/topics.json      the 11 topics
+content/lessons/*.md     one bite per file (121 bites)
+content/legacy.json      old long-lesson URLs → the bites that replaced them
+quiz/questions.json      the question bank (146 questions)
+prompts/                 the authoring contract and study pathway the lessons came from
 ```
 
-## Curriculum
+## Working on the course
 
-**Beginner — foundations & core structures:** algorithmic thinking & correctness ·
-Big-O & complexity analysis · arrays & dynamic arrays · linked lists · stacks &
-queues · hash tables · recursion & the call stack · elementary sorting.
+Clone the shell next to this folder, then run its commands with this folder as the argument:
 
-**Intermediate — core algorithms & trees:** linear & binary search · divide &
-conquer + merge sort · quicksort · heaps & heapsort · binary search trees ·
-balanced trees (AVL / red-black) · graph representations & traversal (BFS/DFS) ·
-non-comparison sorting.
-
-**Advanced — design paradigms & graph algorithms:** dynamic programming (I & II) ·
-greedy algorithms · shortest paths (Dijkstra / Bellman-Ford) · minimum spanning
-trees (Kruskal / Prim) · union-find · backtracking · string matching (KMP).
-
-## Adding content — no code changes required
-
-### Add a lesson
-
-1. Create a Markdown file under `public/content/<level>/`, e.g.
-   `public/content/beginner/big-o-and-complexity-analysis.md`. Start it with YAML
-   front-matter:
-
-   ```md
-   ---
-   id: lesson-02
-   slug: big-o-and-complexity-analysis
-   title: "Big-O and Complexity Analysis"
-   level: beginner
-   order: 2
-   duration: 26
-   tags: [complexity, big-o, asymptotic-analysis, time, space]
-   ---
-
-   # Learning Objectives
-   ...
-   ```
-
-2. Add a matching entry to `public/content/course-manifest.json`:
-
-   ```json
-   {
-     "id": "lesson-02",
-     "slug": "big-o-and-complexity-analysis",
-     "title": "Big-O and Complexity Analysis",
-     "level": "beginner",
-     "order": 2,
-     "duration": 26,
-     "file": "beginner/big-o-and-complexity-analysis.md",
-     "summary": "Asymptotic notation (O, Ω, Θ), best/worst/average case, and how to reason about time and space as input size grows.",
-     "tags": ["complexity", "big-o", "asymptotic-analysis", "time", "space"]
-   }
-   ```
-
-The lesson now appears in the roadmap, sidebar, search, and home — automatically.
-
-> **Flash cards:** a heading titled `Flash Cards` followed by `Q: … / A: …` line
-> pairs is auto-transformed into interactive flip cards.
-
-> **Code fences** must declare one of the highlighted languages: `python`, `bash`,
-> `json`, or `text` (use `text` for pseudocode and diagrams).
-
-### Add a quiz
-
-Create `public/quizzes/<lessonId>.json` (e.g. `public/quizzes/lesson-02.json`):
-
-```json
-{
-  "id": "quiz-lesson-02",
-  "lessonId": "lesson-02",
-  "title": "Big-O and Complexity Analysis",
-  "passingScore": 60,
-  "questions": [
-    { "id": "q1", "type": "single-choice", "prompt": "…",
-      "options": [{ "id": "a", "text": "…" }], "answer": "a",
-      "explanation": "…" }
-  ]
-}
+```bash
+git clone https://github.com/learn-with-will/course-shell.git ../course-shell
+cd ../course-shell
+npm ci
+npm run dev -- ../algorithms                 # live preview at http://localhost:4200
+npm run validate -- ../algorithms --strict   # the check the deploy runs
 ```
 
-Supported question `type` values: `single-choice`, `multiple-choice`,
-`fill-blank`, `ordering`, `match-pair`.
+Node 22.18 or later is required.
+
+## Adding a lesson
+
+1. Create `content/lessons/<slug>.md` with front-matter (`slug`, `title`, `topic`, `kind`,
+   `summary`, `tags`, `related`) and the standard sections.
+2. Add questions for it to `quiz/questions.json` with `"topic"` and `"lesson"`.
+3. Run `npm run validate -- ../algorithms --strict` from the shell folder.
+
+The rules (length limits, which visual fits which kind of information, the diagram syntax) are
+in the shell's [CONTENT_GUIDE.md](https://github.com/learn-with-will/course-shell/blob/main/CONTENT_GUIDE.md).
 
 ## Accuracy
 
-The course is written to a **no-hallucination** standard: every asymptotic bound,
-stability/in-place claim, precondition, and code example is checked against
-authoritative references before it ships. Primary sources:
+Algorithms and proofs follow canonical computer science literature (Cormen, Leiserson, Rivest, Stein *Introduction to Algorithms* 4th ed., and Sedgewick & Wayne *Algorithms* 4th ed.), following the authoring contract in `prompts/lesson-authoring-prompt.md`: an accurate bite with less content beats a fuller one with a single falsehood.
 
-- **CLRS** — Cormen, Leiserson, Rivest, Stein, *Introduction to Algorithms*, 4th ed.
-- **Sedgewick & Wayne**, *Algorithms*, 4th ed. (and algs4.cs.princeton.edu).
-- **Skiena**, *The Algorithm Design Manual*, 3rd ed.
-- **Official Python documentation** (docs.python.org) for language-specific behaviour
-  (`list`, `dict`/`set`, `heapq`, `bisect`, `collections.deque`, recursion limits).
+## Deployment
 
-The per-lesson authoring contract lives in [`prompts/`](prompts/).
-
-## Tech stack
-
-React 19 · Vite · TypeScript · React Router · Tailwind CSS v4 · marked · PrismJS ·
-localStorage. All lesson code is **Python 3**.
-
-## Deploying to GitHub Pages
-
-This repo ships a GitHub Actions workflow ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml))
-that builds the site and publishes it to GitHub Pages on every push to `main`.
-
-One-time setup:
-
-1. In the repo on GitHub, go to **Settings → Pages** and set **Source** to
-   **GitHub Actions**.
-2. Push to `main` (or run the workflow manually from the **Actions** tab).
-
-The site is then served at `https://<user>.github.io/<repo>/`. How it works:
-
-- The workflow builds with `BASE_PATH=/<repo>/`, which sets Vite's `base` so all
-  assets and content resolve under the sub-path. `<BrowserRouter basename>` is
-  aligned to the same value, so client-side routes work too.
-- A `postbuild` step copies `dist/index.html` to `dist/404.html`, giving the SPA a
-  fallback so deep links and refreshes (e.g. `/<repo>/lesson/…`) load correctly.
-
-> If you deploy to a **user/organization site** (`<user>.github.io`) instead of a
-> project site, the base path is `/` — set `BASE_PATH: /` in the workflow.
-
-For other static hosts (Netlify, Vercel), the `dist/` output works as-is; just
-configure an SPA fallback to `index.html`.
+Pushing to `main` runs `.github/workflows/deploy.yml`, which calls the shell's reusable
+workflow: it validates this course in strict mode, builds it with the latest shell and
+publishes it to GitHub Pages. To pick up a shell change without a content change, run the
+workflow by hand from the Actions tab.
